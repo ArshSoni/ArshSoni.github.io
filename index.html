@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<title>Arshdeep Soni - Front-End Web Developer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="assets/css/reset.css"/>
+		<link rel="stylesheet" href="assets/css/Normalize.css"/>
+		<link rel="stylesheet" href="assets/css/style.css"/>
+		<link rel="stylesheet" href="assets/css/animate.css"/>
+		
+		<style>
+			
+			html, body { height: 100%; }
+			
+			.container {
+				height: 100%;
+				position:relative;
+			}
+			
+			header {
+				position:relative;
+				height: 100%;
+								background-image: url(assets/images/background.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}	
+			
+			nav {
+				position:absolute;
+				top:0px;
+				z-index: 99999;
+				width: 100%;
+				
+			}
+			
+			nav ul {
+				width: 100%;
+				text-align: center;
+				margin:0 auto;
+				-webkit-transition: all .5s ease-in-out;
+				padding-top: 10px;
+			}
+			
+			nav ul li {
+				display: inline-block;
+				text-transform: uppercase;
+				padding: 15px 10px;
+				border-radius: 200px;
+				font-size: 12px;
+				margin: 0px 15px;
+				color:white;
+			}
+			
+			nav ul li:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			
+			section {
+				position:relative;
+				top:27%;
+			}
+			
+			header #profile {
+				width: 180px; height: 180px;
+				overflow: hidden;
+				border-radius: 50%;
+				margin:0 auto;
+				z-index: 9999;
+			}
+			
+			header #profile img {
+				width: 180px;
+				height: auto;
+				text-align: left;
+			}
+			
+			#intro {
+				text-align: center;
+				margin:0 auto;
+				color:white;
+			}
+			
+			h1 {
+				padding:0px;
+				padding: 20px 0px 10px 0px;
+				margin:0 auto;
+				letter-spacing: 2px;
+			}
+			
+			h4 { padding: 0px; margin:0 auto;}
+			
+			.scrolled {
+				position:fixed;
+				background-color: black;
+				padding: 0px;
+			}
+			
+			.scrolled li {
+				border-radius: 0;
+				padding: 10px 20px;
+				margin: 0px 6px;
+			}
+			
+			.scrolled li:hover {
+				background-color:rgba(196, 195, 195, 0.62);
+			}
+			
+			/*** About ***/
+			.about,
+			.education, 
+			.experience, 
+			.projects {
+				text-align: center;
+				height: 100%;
+				margin:0 auto;
+			}
+			
+			.inner {
+				padding-top: 100px;
+			}
+			
+			.work {
+				display: table;
+								-webkit-transition: all .5s ease-in-out;
+
+			}
+			
+			.work * {
+								-webkit-transition: all .5s ease-in-out;
+
+			}
+			
+			.work img {
+				width: 100%;
+				-webkit-transition: all .5s ease-in-out;
+			}
+			
+			.work > div {
+				display: inline-block;
+				width: 35%;
+				position:relative;
+				-webkit-transition: all .5s ease-in-out;
+				overflow: hidden;
+				vertical-align: top;
+			}
+			
+			.overlay {
+				z-index: 0;
+				position:absolute;
+				top:0; bottom:0; right:0; left:0;
+				background-color:rgba(0, 0, 0, 0.8);
+				z-index: 9999;
+								-webkit-transition: all .5s ease-in-out;
+				opacity: 0;
+			}
+			
+			.overlay ul li {
+				color:white;
+			}
+			
+			.overlay ul {
+				padding: 22% 0px;
+				transform: scale(5);
+												-webkit-transition: all .5s ease-in-out;
+
+			}
+			
+			.work > div:hover .overlay {
+								-webkit-transition: all .5s ease-in-out;
+				opacity: 1;
+				z-index: 9999;
+				-webkit-transition-delay: .1s;
+				transition-delay: .1s;
+			}
+			
+			.work > div:hover .overlay ul {
+				transform: scale(1);
+												-webkit-transition: all .5s ease-in-out;
+
+			}
+			
+		
+		</style>
+	</head>
+	
+	
+	<body>
+		<div class="container">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>About</li>
+					<li>Education</li>
+					<li>Experience</li>
+					<li>Projects</li>
+					<li>cv</li>
+				</ul>
+			</nav>
+			<header>
+				<section>
+					<div id="profile">
+						<img src="assets/images/me.jpg" alt="">
+					</div>
+					<div id="intro">
+							<h1>Arshdeep Soni</h1>
+							<h4>Front-End Web Developer/Designer</h4>
+						</div>
+				</section>
+			</header>
+			
+			<div class="about">
+				<div class="inner">
+					<h1>About</h1>
+					<p>I a a confident individual with a passion for Web Development. I am able to work well on my initiative when required and enjoy working towards deadlines. I can work effectively as part of a team, and enjoy finding solutions to problems.</p>
+					
+					<p>I am a freelance web developer based in London with experience in both Front and Back end development. I have gained years of experience by developing many personal projects along with projects for clients.</p>
+					
+					<div id="skills">
+						<ul>
+							<li>HTML5 &amp; CSS3</li>
+							<li>Bootstrap 3 Framework</li>
+							<li>Responsive Web Design &#40;Mobile Friendly&#41;</li>
+							<li>PHP &amp; MySQL</li>
+							<li>PostGresSQL</li>
+							<li>JavaScript &amp; JQuery</li>
+							<li>Object Oriented Programming</li>
+							<li>C, Java, Python</li>
+							<li>Git &amp; SVN</li>
+						</ul>
+					</div>
+
+					<p>When I'm not coding, I am usually practicing photography and the art of Magic!</p>
+				</div>
+			</div>
+			
+			<div class="education">
+				
+			</div>
+			
+			<div class="experience">
+				
+			</div>
+			
+			<div class="projects">
+				<div class="inner">
+					<h1>Projects</h1>
+					<p>Take a look at some of my work below!</p>
+					
+					<div class="work">
+						<div id="arshdeepsoni">
+							<img src="assets/images/work/arshdeepsoni.png" alt="">
+							<div class="overlay">
+								<ul>
+									<li>www.ArshdeepSoni.com</li>
+									<li>Professional Magician</li>
+								</ul>
+							</div>
+						</div>
+
+						<div id="sonimakeovers">
+							<img src="assets/images/work/sonimakeovers.png" alt="">
+							<div class="overlay"></div>
+
+						</div>
+
+						<div id="sebbisingh">
+							<img src="assets/images/work/sebbisingh.png" alt="">
+							<div class="overlay"></div>
+
+						</div>
+
+						<div id="sonirepairs">
+							<img src="assets/images/work/sonirepairs.png" alt="">
+							<div class="overlay"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+	
+</html>
