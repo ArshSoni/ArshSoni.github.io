@@ -1,0 +1,71 @@
+<!--
+  
+  Google Vanish By Arshdeep Soni
+  
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+  </head>
+  
+  <body>
+    <div class="container">
+      <nav>
+        <header>
+          <ul class="topNav">
+            <li>Gmail</li>
+            <li>Images</li>
+            <li> <img id="options" src="images/options.png"> </li>
+            <li> <a href="">Sign in</a> </li>
+          </ul>
+        </header>
+      </nav>
+      
+      <div class="search">
+        <img id="logo" src="images/Gwith.png">
+        <form method="" action="">
+          <input type="text">
+          <input type="submit" value="Google Search">
+          <input type="submit" value="I'm Feeling Lucky">
+        </form>
+      </div>      
+      
+      <div class="push"></div>
+    </div>
+    
+    <footer>
+      <ul class="leftLinks">
+        <li>Advertising</li>
+        <li>Business</li>
+        <li>About</li>
+      </ul>
+      <ul class="rightLinks">
+        <li>Privacy</li>
+        <li>Terms</li>
+        <li>Settings</li>
+        <li>Use Google.com</li>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    
+    <script>
+      $(document).ready(function() {
+        var changed = false;
+        $("body").on({'click': function() {
+          if (changed == false) {
+            $("#logo").delay(1000).fadeIn("slow").attr("src", "images/Gwithout.png");
+            changed = true;
+          } else {
+            $("#logo").delay(1000).fadeIn("slow").attr("src", "images/Gwith.png");
+            changed = false;
+          }
+        }
+        });
+      });
+    </script>
+  </body>
+</html>

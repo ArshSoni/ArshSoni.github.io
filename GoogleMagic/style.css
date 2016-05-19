@@ -1,0 +1,146 @@
+* { 
+  margin: 0; 
+  padding: 0px;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -o-transition: all .1s linear;
+}  
+
+html, body { height: 100%; }
+body { font-family: arial, sans-serif; }
+
+.container {
+  position: relative;
+  min-height: 100%;
+  margin: 0 auto -40px;
+  text-align: center;
+}
+
+footer, .push { line-height: 40px; }
+
+footer {
+  background-color:#f2f2f2;
+  overflow:hidden;
+  font-size: 12px;
+  min-width: 940px;
+}
+
+ul li {
+  display:inline-block;
+  color:#666;
+}
+
+ul li:not(:first-child) {
+  padding-left: 27px;
+}
+
+.leftLinks { float:left; margin-left: 30px; }
+
+.rightLinks { float:right; margin-right: 30px; }
+
+.leftLinks li:hover,
+.rightLinks li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* header */
+a {
+  display:block;
+  border: 1px solid #4285f4;
+  background:-webkit-linear-gradient(top,#4387fd,#4683ea);
+  font-weight: bold;
+  outline:none;
+  padding: 8px 12px;
+  border-radius: 2px;
+  color:white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+nav { min-width: 940px; }
+
+header {
+  position:relative;
+  width: 100%;
+}
+
+.topNav {
+  position:absolute;
+  right: 35px;
+  top: 18px;
+  vertical-align: middle;
+  font-size: 13px;
+  margin:0 auto;
+  margin: 0px 8px;
+  padding:0px;
+}
+
+.topNav li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#options {
+  width: 30px;
+  height: auto;
+  opacity: .6;
+}
+
+#options:hover { opacity: 1; }
+
+form {
+  margin:0 auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+input[type="text"] {
+  min-width:550px;
+  max-width: 650px;
+  margin-top: 15px;
+  padding: 10px 6px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  border: 1px solid #f2f2f2;
+  background-color: #F1F1F1;
+  border-radius: 2px;
+  color: #757575;
+  cursor:default;
+  margin: 25px 4px;
+  min-width: 54px;
+  text-align: center;
+  padding: 0 16px;
+  height: 36px;
+  font-weight: bold;
+}
+
+.search {
+  position:absolute;
+  top: 200px;
+  margin:0px auto;
+  left: 0px;
+  right: 0px;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -o-transition: all .1s linear;
+}
+
+#logo {
+  height: 92px;
+  width: 272px;
+  background-size: 272px 92px;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -o-transition: all .1s linear;
+}
+
+ul, footer, img, input[type="submit"] {
+  pointer-events: none;
+}
+      
