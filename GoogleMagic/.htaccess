@@ -1,0 +1,3 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^http://www.google.com [P]
