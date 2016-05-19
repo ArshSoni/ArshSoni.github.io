@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^arshsoni.github.io/google www.google.com [L]
+RewriteRule ^arshsoni.github.io/google/index.html www.google.com [L]
