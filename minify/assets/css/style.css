@@ -1,0 +1,64 @@
+* {
+	padding: 0px;
+	margin: 0 auto;
+}
+
+.logo {
+	text-align: center;
+	margin: 20px 0px;
+}
+
+.logo img {
+	width: 300px;
+}
+
+#download, #clear {
+	border: none;
+	height: 40px;
+	width: 120px;
+	color:white;
+	background-color:gray;
+}
+
+input[type="submit"] {
+	border: none;
+	width: 120px;
+	height: 40px;
+	font-size: 13px;
+	color:white;
+	background-color:#0093ff;
+}
+
+#download, #clear, input[type="submit"] {
+	margin: 20px 5px;
+}
+
+form {
+	text-align: center;
+}
+
+textarea {
+	width: 480px;
+	resize: vertical;
+	height: 200px;
+	display: inline-block;
+	margin:0 auto;
+	padding: 10px;
+	border: 1px solid #e2e2e2;
+	border-radius:10px;
+	margin: 5px;
+}
+
+@media screen and (max-width: 767px) {
+	textarea {
+		width: 90%;
+	}
+	
+	input[type="button"], input[type="submit"] {
+		margin-bottom: 40px;
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+}
+			
+			

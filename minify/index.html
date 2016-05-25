@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Minifier</title>
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	
+	
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">
+					<img src="assets/images/logo.png" alt="">
+				</div>
+			</header>
+			<form id="minifyForm" method="post" onsubmit="return minify();">
+				<textarea name="input" id="input" placeholder="Paste the code you want to minify here."></textarea>
+				<textarea name="output" id="output" readonly></textarea>
+				<br>
+				<input type="submit" id="submit" name="submit" value="Minify">
+				<input id="download" type="button" value="Download as File" name="download" onclick="saveAsFile()">
+				<input type="button" id="clear" value="Clear" onclick="clearText()">
+			</form>
+		</div>
+		
+		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+	</body>
+</html>
