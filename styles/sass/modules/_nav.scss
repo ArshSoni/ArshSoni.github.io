@@ -1,0 +1,18 @@
+
+nav {
+  text-align: right;
+
+  a {
+    margin: 15px 10px;
+    display:inline-block;
+    text-decoration: none;
+    padding:5px 15px;
+    text-align:center;
+    border-radius:3px;
+
+    &:hover {
+      background-color:rgb(63, 187, 226);
+      color:white;
+    }
+  }
+}

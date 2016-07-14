@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto -50px;
+  min-height: 100%;
+}
+
+footer,
+.push {
+  height: 10px;
+  padding: 40px 0;
+  width:500px;
+  margin:0 auto;
+}
+
+footer {
+  border-top: 1px solid grey;
+  p {
+    margin:0;
+    line-height:normal;
+    font-size:14px;
+  }
+}
