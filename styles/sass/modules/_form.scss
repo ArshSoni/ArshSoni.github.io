@@ -1,0 +1,148 @@
+
+.hide { /* input box */
+  position: absolute;
+  visibility: hidden;
+  height: 1px;
+  width: 1px;
+  left: -1px;
+  top: -1px;
+}
+
+.getInTouch2 {
+  position:relative;
+  height:120px;
+  margin-bottom: 40px;
+}
+
+
+.overlay {
+  position:absolute;
+  background-color: rgba(0,0,0,0.7);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:none;
+}
+
+.morph {
+  width: 200px;
+  height: 80px;
+  margin-top: 100px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  background-color: #2978A0;
+  overflow: hidden;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  transition: all .3s ease-in-out;
+
+}
+.morph:hover {
+  background-color: #347FC4;
+}
+
+.btn-morph-on {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #FFF;
+  line-height: 3.5em;
+  font-size: 1.4em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-morph-off {
+  position: relative;
+  top: 10px;
+  color: #FFF;
+  display: none;
+  font-size: 2.5em;
+  font-family: 'Raleway';
+  cursor: pointer;
+  float:right;
+  width:100px;
+  z-index:9;
+}
+
+.morph-content {
+  position:relative;
+  padding: 40px;
+  color: #FFF;
+  text-align: justify;
+  transition: all .3s ease-in-out;
+  font-size: 18px;
+}
+
+.morph-content h1 {
+  text-align:center;
+  font-size:1.8em;
+  margin-bottom:10px;
+  text-transform: uppercase;
+  margin-top:10px;
+}
+
+
+#btn-state:checked + .morph {
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background-color: #347FC4;
+  width: 500px;
+  height:550px;
+  transition: all .3s ease-in-out;
+
+}
+#btn-state:checked + .morph .btn-morph-on {
+  display: none;
+}
+#btn-state:checked + .morph .btn-morph-off {
+  display: block;
+}
+
+.contactForm {
+  text-align:center;
+  overflow: hidden;
+}
+
+.contactForm input[type="text"] {
+  width:80%;
+  margin: 10px 0;
+  height: 30px;
+  padding: 5px 0;
+  text-indent: 20px;
+  color:black;
+}
+
+.contactForm textarea {
+  width:80%;
+  height:180px;
+  text-indent: 20px;
+  color:black;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+#submitBtn {
+display:block;
+float:right;
+margin-right:40px;
+width:80px;
+color:black;
+}
+
+.fa-envelope {
+  margin-left:10px;
+  font-size:18px;
+}
+
+.fa-times:hover {
+  color:rgb(226, 226, 226);
+  transition: all .3s ease-in-out;
+}
