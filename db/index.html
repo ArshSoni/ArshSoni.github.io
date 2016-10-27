@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dan Boyles Magician &amp; Mentalist</title>
+    <link rel="stylesheet" href="assets/styles/sass/main.css" media="screen" title="no title" charset="utf-8">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
+  </head>
+  <body>
+    <div class="headerWrapper">
+      <header>
+          <div class="logo">
+            <img src="assets/images/logos/summerLogo.jpg">
+          </div>
+          <div class="nav">
+            <ul class="menu" id="cl-effect-12">
+              <li><a href="index.html" class="activeLink"><span data-hover="Home">Home</span></a></li>
+              <li><a href="photos.html"><span data-hover="Photos">Photos</span></a></li>
+              <li><a href="videos.html"><span data-hover="Videos">Videos</span></a></li>
+              <li><a href="testimonials.html"><span data-hover="Testimonials">Testimonials</span></a></li>
+              <li><a href="about.html"><span data-hover="About">About</span></a></li>
+              <li><a href="contact.html"><span data-hover="Contact">Contact</span></a></li>
+          </div>
+      </header>
+    </div>
+
+    <div class="wrapper">
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="img-banner">
+            <img src="assets/images/backgrounds/tempFeaturedImg.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer>
+      <ul>
+        <li class="social">
+          <span class="fa fa-facebook" style="color:black;"></span>
+          <span class="fa fa-instagram"></span>
+          <span class="fa fa-youtube"></span>
+          <span class="fa fa-twitter"></span>
+        </li>
+        <li class="logo">
+          <img src="assets/images/logos/summerLogo.jpg">
+        </li>
+        <li class="copyright">
+          <p>&copy; Dan Boyles 2016. All Rights Reserved.</p>
+        </li>
+      </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).on('scroll', function() {
+        if ($(document).scrollTop() > 50) {
+          $("header").addClass("shrink");
+
+        } else {
+          $("header").removeClass("shrink");
+        }
+      });
+    </script>
+  </body>
+</html>
