@@ -1,0 +1,44 @@
+include includes/mixins
+
+doctype
+html
+	head
+		+meta('Magic Singh', 'woo')
+		+getStylesheets()
+
+	body
+		div.wrap.fullsize-bg-image
+			+getNavbar()
+
+			div.details
+				div.container
+					div.row
+						div.col-xs-12
+							a(class="navbar-brand" href="#")
+								+getLogo()
+						
+					div.row
+						div.col-xs-8.col-xs-push-2.col-md-6.col-md-push-3
+							div.row
+								div.bookNowWrapper.col-xs-12.col-sm-6
+									a(href="#" class="bookNow")
+										img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
+								div.contactWrapper.col-xs-12.col-sm-6
+									a(href="tel:+447787122666" class="contact")
+										img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png")
+		
+			div.push
+
+		footer
+			+getFooter
+
+		script.
+			$(document).ready(function() {
+				$('.showreel').colorbox({
+					iframe:true,
+					innerWidth:640, 
+					innerHeight:390
+				});
+			});
+
+		
