@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/style.css"/>
     <link rel="stylesheet" href="plugins/magnific/magnific-popup.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrap fullsize-bg-image">
@@ -20,9 +19,10 @@
         <div class="collapse navbar-collapse navWrapper" id="myNavbar">
           <ul class="nav navbar-nav site-nav js-site-nav">
             <li><a href="index.html">Home<span class="js-bottom-border bottom-border"></span></a></li>
-            <li><a href="blog.html">Blog<span class="js-bottom-border"></span></a></li>
-            <li><a class="showreel" href="https://www.youtube.com/watch?v=eUf_xfZBc8A?autoplay=1&amp;rel=0">Showreel<span class="js-bottom-border"></span></a></li>
+            <li><a class="showreel" href="https://www.youtube.com/watch?v=eUf_xfZBc8A">Showreel<span class="js-bottom-border"></span></a></li>
+            <li class="middleLink"><a class="spade" href="index.html"><img src="images/spade.png"/></a></li>
             <li><a href="shop.html">Shop<span class="js-bottom-border"></span></a></li>
+            <li><a class="contact" href="contact.html">contact<span class="js-bottom-border"></span></a></li>
           </ul>
         </div>
       </nav>
@@ -34,8 +34,7 @@
           <div class="row">
             <div class="col-xs-8 col-xs-push-2 col-md-6 col-md-push-3">
               <div class="row">
-                <div class="bookNowWrapper col-xs-12 col-sm-6"><a class="bookNow" href="#contactForm"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png"></a></div>
-                <div class="contactWrapper col-xs-12 col-sm-6"><a class="contact" href="tel:+447787122666"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png"></a></div>
+                <div class="bookNowWrapper col-xs-12 col-sm-6 col-sm-push-3"><a class="bookNow" href="#contactForm"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png"></a></div>
               </div>
             </div>
           </div>
@@ -101,19 +100,14 @@
         <div class="wpcf7-response-output wpcf7-display-none"></div>
       </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="plugins/magnific/jquery.magnific-popup.js"></script>
     <script>
-      //- $(document).ready(function() {
-      //- 	$('.showreel').colorbox({
-      //- 		iframe:true,
-      //- 		innerWidth:640, 
-      //- 		innerHeight:390
-      //- 	});
-      //- });
-      
       $(document).ready(function() {
       	
       	$('.showreel').magnificPopup({
+      		type:'iframe', 
+      
       		callbacks: {
       			open: function() {
       				$('.showreel').addClass('active');
@@ -127,17 +121,28 @@
       			}
       		}, 
       
-      		type:'iframe', 
       		mainClass:'mfp-fade',
       		removalDelay: 300, 
       		preloader: false, 
       		fixedcontentPos: false, 
-      		enableEscapeKey: true, 
+      		enableEscapeKey: true
       
       		
       	});
       
       	$('.bookNow').magnificPopup({
+      		callbacks: {
+      			open: function() {
+      				$('.contactForm').css('display', 'block');
+      			}
+      		}, 
+      		type: 'inline', 
+      		preloader: false, 
+      		modal: false,
+      		enableEscapeKey: true
+      	});
+      
+      	$('.contact').magnificPopup({
       		callbacks: {
       			open: function() {
       				$('.contactForm').css('display', 'block');

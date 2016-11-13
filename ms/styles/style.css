@@ -65,7 +65,7 @@ body {
 .details {
   width: auto;
   position: absolute;
-  bottom:100px;
+  bottom:70px;
   left:0;
   right:0; 
 }
@@ -179,7 +179,7 @@ body {
 }
 
 .socialWrapper svg circle {
-  fill: rgba(255, 255, 255, .4);
+  fill: rgba(189, 150, 67, .8);
   transition: fill .3s ease-in-out;
 }
 
@@ -463,8 +463,22 @@ p {
   animation: bounce 2s infinite;
 }
 
+.site-nav .middleLink {
+  vertical-align: middle;
+  display: none;
+}
+
+.site-nav .middleLink img {
+  width: 60px;
+  opacity: .8;
+}
+
 
 @media screen and (max-width: 767px) {
+
+  .site-nav .middleLink {
+    display: none;
+  }
 
   .wrap {
     background-position: 55% center;
@@ -493,7 +507,7 @@ p {
   .details {
     width: auto;
     position: absolute;
-    bottom:50px;
+    bottom:100px;
     left:0;
     right:0; 
   }
@@ -507,9 +521,6 @@ p {
     margin-bottom: 20px;
   }
 
-  .bookNowWrapper {
-    display: none;
-  }
 
   .navbar-brand img {
     max-width:400px;
@@ -538,9 +549,12 @@ p {
   }
 }
 
-@media screen and (min-width: 1000px) {
-
-}
+/*@media screen and (min-width: 1000px) {
+  .fullsize-bg-image {
+    background-position: center -150px;
+    background-repeat: no-repeat;
+  }
+}*/
 
 
 /* overlay at start */

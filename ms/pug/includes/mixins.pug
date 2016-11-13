@@ -40,18 +40,24 @@ mixin getNavbar(selected)
         //-     else
         //-       if name == 'Showreel'
         //-       a(href=link)= name
+
         li
           a(href="index.html") Home
             span.js-bottom-border.bottom-border
+
         li
-          a(href="blog.html") Blog
+          a.showreel(href="https://www.youtube.com/watch?v=eUf_xfZBc8A") Showreel
             span.js-bottom-border
-          
-        li
-          a.showreel(href="https://www.youtube.com/watch?v=eUf_xfZBc8A?autoplay=1&rel=0") Showreel
-            span.js-bottom-border
+
+        li.middleLink
+          a.spade(href="index.html")
+            img(src="images/spade.png")
         li
           a(href="shop.html") Shop
+            span.js-bottom-border
+
+        li
+          a.contact(href="contact.html") contact
             span.js-bottom-border
             
             

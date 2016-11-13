@@ -5,9 +5,6 @@ html.loading
 	head
 		+meta('Magic Singh', 'woo')
 		+getStylesheets()
-		+addScript('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-
-
 		
 
 	body
@@ -25,12 +22,12 @@ html.loading
 					div.row
 						div.col-xs-8.col-xs-push-2.col-md-6.col-md-push-3
 							div.row
-								div.bookNowWrapper.col-xs-12.col-sm-6
+								div.bookNowWrapper.col-xs-12.col-sm-6.col-sm-push-3
 									a(href="#contactForm" class="bookNow")
 										img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
-								div.contactWrapper.col-xs-12.col-sm-6
-									a(href="tel:+447787122666" class="contact")
-										img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png")
+								//- div.contactWrapper.col-xs-12.col-sm-6
+								//- 	a(href="tel:+447787122666" class="contact")
+								//- 		img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png")
 		
 			div.push
 
@@ -39,20 +36,14 @@ html.loading
 
 		+getContactForm()
 
-
+		+addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
 		+addScript('plugins/magnific/jquery.magnific-popup.js')
 		script.
-			//- $(document).ready(function() {
-			//- 	$('.showreel').colorbox({
-			//- 		iframe:true,
-			//- 		innerWidth:640, 
-			//- 		innerHeight:390
-			//- 	});
-			//- });
-
 			$(document).ready(function() {
 				
 				$('.showreel').magnificPopup({
+					type:'iframe', 
+
 					callbacks: {
 						open: function() {
 							$('.showreel').addClass('active');
@@ -66,17 +57,28 @@ html.loading
 						}
 					}, 
 
-					type:'iframe', 
 					mainClass:'mfp-fade',
 					removalDelay: 300, 
 					preloader: false, 
 					fixedcontentPos: false, 
-					enableEscapeKey: true, 
+					enableEscapeKey: true
 
 					
 				});
 
 				$('.bookNow').magnificPopup({
+					callbacks: {
+						open: function() {
+							$('.contactForm').css('display', 'block');
+						}
+					}, 
+					type: 'inline', 
+					preloader: false, 
+					modal: false,
+					enableEscapeKey: true
+				});
+
+				$('.contact').magnificPopup({
 					callbacks: {
 						open: function() {
 							$('.contactForm').css('display', 'block');
