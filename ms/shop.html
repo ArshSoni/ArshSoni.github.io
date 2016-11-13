@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="woo"/>
+    <meta name="author" content="Ryan Amparo"/>
+    <meta http-equiv="content"/>
+    <link rel="stylesheet" href="styles/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="plugins/colorbox/colorbox.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="navbar navbar-custom">
+        <input class="inputDropdown sr-only" id="dropdown" type="checkbox"/>
+        <label class="navbar-toggle" for="dropdown"> <span></span></label>
+        <div class="collapse navbar-collapse navWrapper" id="myNavbar">
+          <ul class="nav navbar-nav site-nav js-site-nav">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="showreel" href="https://www.youtube.com/v/eUf_xfZBc8A?rel=0&amp;amp;wmode=transparent&amp;autoplay=1">Showreel</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="shop">
+        <div class="shop-header">
+          <div class="shop-header-text">
+            <div class="card-overlay"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_Overlay_450w.png"></div>
+            <div class="title-action">
+              <div class="logo-name"><a href="index.html"><img class="shop-card-logo" src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS-LOGO-1.png" alt="Magic Singh" title="MagicSingh"></a>
+                <h3 class="product-title">Playing Cards</h3>
+              </div>
+              <form class="buy-form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="REX7497EJ48UE">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="hidden" name="on0" value="Quantity and Shipping">Quantity and Shipping
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select id="quantity" name="os0">
+                          <option value="1 Deck">1 Deck (U.K. Only) £12.00 GBP </option>
+                          <option value="2 Decks">2 Decks (U.K. Only) £24.00 GBP</option>
+                          <option value="4 Decks">4 Decks (U.K. Only) £47.00 GBP</option>
+                          <option value="8 Decks">8 Decks (U.K. Only) £96.00 GBP</option>
+                          <option value="12 Decks">12 Decks (U.K. Only) £145.00 GBP</option>
+                          <option value="1 Deck International">1 Deck (International) £21.00 GBP</option>
+                          <option value="2 Decks International">2 Decks (International) £34.00 GBP</option>
+                          <option value="4 Decks International">4 Decks (International) £60.00 GBP</option>
+                          <option value="8 Decks International">8 Decks (International) £114.00 GBP</option>
+                          <option value="12 Decks International">12 Decks (International) £164.00 GBP</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Addresses outside U.K. must select <br> from International options.</p>
+                <p style="text-decoration:underline">Postage will be added upon checking out</p>
+                <input type="hidden" name="currency_code" value="GBP">
+                <input id="purchase" type="submit" value="purchase" name="submit" alt="PayPal – The safer, easier way to pay online.">
+              </form>
+            </div>
+          </div>
+          <video class="msPlayingCardVideo" autoplay loop muted>
+            <source src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.mp4" type="video/mp4">
+            <source src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.ogg" type="video/ogg">
+          </video>
+          <div class="arrow arrow-bounce"></div>
+        </div>
+        <section class="shop-content">
+          <section class="text-callouts">
+            <p><strong>Magic Singh's Custom branded playing Cards</strong></p>The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
+          </section>
+          <section><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0000_MSCARDS01.jpg" alt="0000 MSCARDS01"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0001_MSCARDS02.jpg" alt="0001 MSCARDS02"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0002_MSCARDS03.jpg" alt="0002 MSCARDS03"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0003_MSCARDS04.jpg" alt="0003 MSCARDS04"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0004_MSCARDS05.jpg" alt="0004 MSCARDS05"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0005_MSCARDS06.jpg" alt="0005 MSCARDS06"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0007_MSCARDS08.jpg" alt="0007 MSCARDS08"></section>
+          <section class="text-callouts shop-signoff">
+            <p><strong>Only available through MagicSingh.com</strong></p>
+          </section>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

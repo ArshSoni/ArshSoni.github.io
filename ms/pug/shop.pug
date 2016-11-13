@@ -1,0 +1,86 @@
+include includes/mixins
+
+doctype
+html
+	head
+		+meta('hello', 'woo')
+		+getStylesheets()
+
+	body
+		div.wrap
+			+getNavbar('Shop')
+
+			div.shop
+				div.shop-header
+
+					div.shop-header-text
+						div.card-overlay
+							img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_Overlay_450w.png")
+						
+						div.title-action
+							div.logo-name
+								a(href="index.html")
+									img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS-LOGO-1.png" alt="Magic Singh" class="shop-card-logo" title="MagicSingh")
+								h3.product-title Playing Cards
+
+							form.buy-form(target='paypal', action='https://www.paypal.com/cgi-bin/webscr', method='post')
+								input(type='hidden', name='cmd', value='_s-xclick')
+								input(type='hidden', name='hosted_button_id', value='REX7497EJ48UE')
+								table
+									tbody
+										tr
+											td
+												input(type='hidden', name='on0', value='Quantity and Shipping')
+												| Quantity and Shipping
+										tr
+											td
+												select#quantity(name='os0')
+													option(value='1 Deck') 1 Deck (U.K. Only) £12.00 GBP 
+													option(value='2 Decks') 2 Decks (U.K. Only) £24.00 GBP
+													option(value='4 Decks') 4 Decks (U.K. Only) £47.00 GBP
+													option(value='8 Decks') 8 Decks (U.K. Only) £96.00 GBP
+													option(value='12 Decks') 12 Decks (U.K. Only) £145.00 GBP
+													option(value='1 Deck International') 1 Deck (International) £21.00 GBP
+													option(value='2 Decks International') 2 Decks (International) £34.00 GBP
+													option(value='4 Decks International') 4 Decks (International) £60.00 GBP
+													option(value='8 Decks International') 8 Decks (International) £114.00 GBP
+													option(value='12 Decks International') 12 Decks (International) £164.00 GBP
+								p
+									| Addresses outside U.K. must select 
+									br
+									|  from International options.
+								p(style='text-decoration:underline;') Postage will be added upon checking out
+								input(type='hidden', name='currency_code', value='GBP')
+								input#purchase(type='submit', value='purchase', name='submit', alt='PayPal – The safer, easier way to pay online.')
+
+					video(class="msPlayingCardVideo" autoplay loop muted)
+						source(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.mp4" type="video/mp4")
+						source(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.ogg" type="video/ogg")
+					
+					div.arrow.arrow-bounce
+						
+
+				section.shop-content
+					section.text-callouts
+						p
+							strong Magic Singh's Custom branded playing Cards
+						| The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
+					
+					section
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0000_MSCARDS01.jpg', alt='0000 MSCARDS01')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0001_MSCARDS02.jpg', alt='0001 MSCARDS02')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0002_MSCARDS03.jpg', alt='0002 MSCARDS03')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0003_MSCARDS04.jpg', alt='0003 MSCARDS04')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0004_MSCARDS05.jpg', alt='0004 MSCARDS05')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0005_MSCARDS06.jpg', alt='0005 MSCARDS06')
+						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0007_MSCARDS08.jpg', alt='0007 MSCARDS08')
+
+					section.text-callouts.shop-signoff
+						p
+							strong Only available through MagicSingh.com
+
+
+		
+
+
+
