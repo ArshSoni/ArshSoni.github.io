@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
   <head>
     <title>Magic Singh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,10 +8,9 @@
     <meta http-equiv="content"/>
     <link rel="stylesheet" href="styles/bootstrap.css"/>
     <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="plugins/magnific/magnific-popup.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="plugins/colorbox/colorbox.css"/>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrap fullsize-bg-image">
@@ -20,9 +19,10 @@
         <label class="navbar-toggle" for="dropdown"> <span></span></label>
         <div class="collapse navbar-collapse navWrapper" id="myNavbar">
           <ul class="nav navbar-nav site-nav js-site-nav">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a class="showreel" href="https://www.youtube.com/v/eUf_xfZBc8A?rel=0&amp;amp;wmode=transparent&amp;autoplay=1">Showreel</a></li>
-            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html">Home<span class="js-bottom-border bottom-border"></span></a></li>
+            <li><a href="blog.html">Blog<span class="js-bottom-border"></span></a></li>
+            <li><a class="showreel" href="https://www.youtube.com/watch?v=eUf_xfZBc8A?autoplay=1&amp;rel=0">Showreel<span class="js-bottom-border"></span></a></li>
+            <li><a href="shop.html">Shop<span class="js-bottom-border"></span></a></li>
           </ul>
         </div>
       </nav>
@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-xs-8 col-xs-push-2 col-md-6 col-md-push-3">
               <div class="row">
-                <div class="bookNowWrapper col-xs-12 col-sm-6"><a class="bookNow" href="#"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png"></a></div>
+                <div class="bookNowWrapper col-xs-12 col-sm-6"><a class="bookNow" href="#contactForm"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png"></a></div>
                 <div class="contactWrapper col-xs-12 col-sm-6"><a class="contact" href="tel:+447787122666"><img src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png"></a></div>
               </div>
             </div>
@@ -67,13 +67,90 @@
         </div>
       </div>
     </footer>
+    <div class="contactForm" id="contactForm">
+      <form class="wpcf7-form" name="" action="/#wpcf7-f19-o1" method="post" novalidate="novalidate">
+        <div style="display: none">
+          <input type="hidden" name="_wpcf7" value="19"/>
+          <input type="hidden" name="_wpcf7_version" value="4.1.1"/>
+          <input type="hidden" name="_wpcf7_locale" value=""/>
+          <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f19-o1"/>
+          <input type="hidden" name="_wpnonce" value="c922a80e72"/>
+        </div>
+        <ul class="alignright">
+          <li id="formmail">Email<br/><span class="wpcf7-form-control-wrap your-email">
+              <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false"/></span></li>
+          <li id="formoccasion">Telephone<br/><br/><span class="wpcf7-form-control-wrap Telephone">
+              <input class="wpcf7-form-control wpcf7-text" type="text" name="Telephone" value="" size="40" aria-invalid="false"/></span></li>
+        </ul>
+        <ul>
+          <li id="formname">Name <br/><span class="wpcf7-form-control-wrap your-name">
+              <input class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false"/></span></li>
+          <li id="formsubject">Occasion<br/><span class="wpcf7-form-control-wrap your-subject">
+              <input class="wpcf7-form-control wpcf7-text" type="text" name="your-subject" value="" size="40" aria-invalid="false"/></span></li>
+        </ul>
+        <ul>
+          <li id="formmessage">Your Message<br/><span class="wpcf7-form-control-wrap your-message">
+              <textarea class="wpcf7-form-control wpcf7-textarea" name="your-message" cols="40" rows="10" aria-invalid="false"></textarea></span></li>
+        </ul>
+        <ul>
+          <li id="formsubmit">
+            <input class="wpcf7-form-control wpcf7-submit" type="submit" value="Send"/><img class="ajax-loader" src="http://magicsingh.com/v1/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden"/>
+          </li>
+        </ul>
+        <p><img style="display: block; margin: 0 auto" src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_PhoneBy.png"/></p>
+        <div class="wpcf7-response-output wpcf7-display-none"></div>
+      </form>
+    </div>
+    <script src="plugins/magnific/jquery.magnific-popup.js"></script>
     <script>
+      //- $(document).ready(function() {
+      //- 	$('.showreel').colorbox({
+      //- 		iframe:true,
+      //- 		innerWidth:640, 
+      //- 		innerHeight:390
+      //- 	});
+      //- });
+      
       $(document).ready(function() {
-      	$('.showreel').colorbox({
-      		iframe:true,
-      		innerWidth:640, 
-      		innerHeight:390
+      	
+      	$('.showreel').magnificPopup({
+      		callbacks: {
+      			open: function() {
+      				$('.showreel').addClass('active');
+      				$('.showreel .js-bottom-border').addClass('bottom-border');
+      
+      				$.magnificPopup.instance.close = function() {
+      					$.magnificPopup.proto.close.call(this);
+      					$('.showreel').removeClass('active');
+      					$('.showreel .js-bottom-border').removeClass('bottom-border');
+      				}
+      			}
+      		}, 
+      
+      		type:'iframe', 
+      		mainClass:'mfp-fade',
+      		removalDelay: 300, 
+      		preloader: false, 
+      		fixedcontentPos: false, 
+      		enableEscapeKey: true, 
+      
+      		
       	});
+      
+      	$('.bookNow').magnificPopup({
+      		callbacks: {
+      			open: function() {
+      				$('.contactForm').css('display', 'block');
+      			}
+      		}, 
+      		type: 'inline', 
+      		preloader: false, 
+      		modal: false,
+      		enableEscapeKey: true
+      	});
+      
+      
+      	
       });
     </script>
   </body>
