@@ -1,27 +1,39 @@
+@font-face {
+  font-family: 'phil-regular';
+  src: url('../philosopher/phil-regular.ttf') format('truetype');
+}
+
 html, body {
   height: 100%;
 }
 
 body {
   font-size: 16px;
+  font-family: 'phil-regular';
+}
+
+.bookNowWrappermain {
+  display: none;
 }
 
 .wrap {
   min-height: 100%;
   width: 100%;
   position:relative;
-  margin: 0 auto -50px;
+  margin: 0 auto -60px;
 }
 
 .fullsize-bg-image {
-  background-image: url('https://format-com-cld-res.cloudinary.com/image/private/s--j_GC5SCR--/c_limit,g_center,h_1200,w_65535/a_auto,fl_keep_iptc.progressive,q_95/172120-8872327-MAGIC_SINGH.jpg');
+  /*background-image: url('https://format-com-cld-res.cloudinary.com/image/private/s--j_GC5SCR--/c_limit,g_center,h_1200,w_65535/a_auto,fl_keep_iptc.progressive,q_95/172120-8872327-MAGIC_SINGH.jpg');*/
+  background-image: url('../images/mainCopy.jpg');
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .push, footer {
-  height: 50px;
+  height: 60px;
 }
 
 .navWrapper {
@@ -52,10 +64,11 @@ body {
   height: auto;
   padding:0;
   margin:0;
+  display: none;
 }
 
 .navbar-brand img {
-  max-width: 500px;
+  max-width: 350px;
   width: 100%;
   height: auto;
   display: block;
@@ -65,9 +78,10 @@ body {
 .details {
   width: auto;
   position: absolute;
-  bottom:70px;
+  bottom:75px;
   left:0;
   right:0; 
+  z-index: 1;
 }
 
 .navbar-custom {
@@ -75,6 +89,8 @@ body {
   padding:0;
   margin:0;
   border:0;
+  position:relative;
+  z-index: 999;
 }
 
 .navWrapper {
@@ -85,7 +101,7 @@ body {
   float:none;
   padding:10px 0;
   position:relative;
-  z-index: 99;
+  z-index: 999
 }
 
 .site-nav li {
@@ -111,11 +127,12 @@ body {
   border:2px solid orange;
   left:0;
   right:0;
-  display: block;
+  display: none;
   width:50%;
   border-radius: 10px;
   margin:0 auto;
 }
+
 
 .site-nav li a:hover {
  color: #fff;
@@ -126,10 +143,16 @@ body {
   background:0;
 }
 
+
 .site-nav li .active {
   color: #fff;
   color: rgba(255, 255, 255, 1);
 }
+
+.site-nav li a:hover .bottom-border {
+  display: block;
+}
+
 
 
 .navbar-toggle {
@@ -166,6 +189,7 @@ body {
 
 .social-icon {
   width: 35px;
+  margin:0 auto;
 }
 
 .socialWrapper {
@@ -234,10 +258,19 @@ body {
   z-index:1; 
   }
 
+@media screen and (max-width: 450px) {
+  .fullsize-bg-image {
+    /*background-image: url('../images/mainCopy.jpg');*/
+  }
+
+  .navbar-brand { display: none; }
+}
+
 @media screen and (min-width:768px) {
   .shop-header {
     background-image: url("http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1500w.jpg");
   }
+  
 }
 
 .shop-header-text {
@@ -481,7 +514,8 @@ p {
   }
 
   .wrap {
-    background-position: 55% center;
+    /*background-position: 52.5% center;*/
+    /*background-position: 52% center;*/
     transition: all .5s ease;
   }
 
@@ -504,29 +538,33 @@ p {
     margin:0 auto;
   }
 
+
+/*
   .details {
     width: auto;
     position: absolute;
-    bottom:100px;
+    bottom: 15vh;
     left:0;
     right:0; 
-  }
+  }*/
 
-  .contactWrapper, 
+  /*.contactWrapper, 
   .bookNowWrapper {
     margin-bottom: 10px;
-  }
+  }*/
+
+  
 
   .contactWrapper {
     margin-bottom: 20px;
   }
 
 
-  .navbar-brand img {
+  /*.navbar-brand img {
     max-width:400px;
     width: 100%;
 
-  }
+  }*/
 
   .socialWrapper {
     max-width: auto;
@@ -744,3 +782,22 @@ html.loading body {
   opacity: 0;
   transition: opacity 0;
 }*/
+
+
+.socialWrapper {
+  position: relative;
+  margin:0 auto;
+  padding:0;
+  text-align:center;
+  box-sizing:border-box;
+}
+
+.socialWrapper li {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+.bookNowWrapper img {
+  width: 100%;
+}

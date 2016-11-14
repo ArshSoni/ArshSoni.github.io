@@ -3,7 +3,7 @@ include includes/mixins
 doctype
 html.loading
 	head
-		+meta('Magic Singh', 'woo')
+		+meta('MS', 'woo')
 		+getStylesheets()
 		
 
@@ -19,12 +19,16 @@ html.loading
 							a(class="navbar-brand" href="#")
 								+getLogo()
 						
-					div.row
-						div.col-xs-8.col-xs-push-2.col-md-6.col-md-push-3
-							div.row
-								div.bookNowWrapper.col-xs-12.col-sm-6.col-sm-push-3
-									a(href="#contactForm" class="bookNow")
-										img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
+					div.bookNowWrappermain
+						a(href="#contactForm" class="bookNowmain")
+							img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
+							
+					//- div.row
+					//- 	div.col-xs-8.col-xs-push-2.col-md-6.col-md-push-3
+					//- 		div.row
+					//- 			div.bookNowWrapper.col-xs-12.col-sm-6.col-sm-push-3
+					//- 				a(href="#contactForm" class="bookNow")
+					//- 					img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
 								//- div.contactWrapper.col-xs-12.col-sm-6
 								//- 	a(href="tel:+447787122666" class="contact")
 								//- 		img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png")
@@ -47,12 +51,10 @@ html.loading
 					callbacks: {
 						open: function() {
 							$('.showreel').addClass('active');
-							$('.showreel .js-bottom-border').addClass('bottom-border');
 
 							$.magnificPopup.instance.close = function() {
 								$.magnificPopup.proto.close.call(this);
 								$('.showreel').removeClass('active');
-								$('.showreel .js-bottom-border').removeClass('bottom-border');
 							}
 						}
 					}, 
