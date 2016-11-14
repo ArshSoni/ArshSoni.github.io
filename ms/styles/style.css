@@ -515,7 +515,7 @@ p {
 
   .wrap {
     /*background-position: 52.5% center;*/
-    /*background-position: 52% center;*/
+    background-position: 52% center;
     transition: all .5s ease;
   }
 
