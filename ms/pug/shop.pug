@@ -3,7 +3,7 @@ include includes/mixins
 doctype
 html
 	head
-		+meta('hello', 'woo')
+		+meta('Magic Singh | Shop', 'woo')
 		+getStylesheets()
 
 	body
@@ -13,14 +13,14 @@ html
 			div.shop
 				div.shop-header
 
-					div.shop-header-text
-						div.card-overlay
-							img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_Overlay_450w.png")
-						
+					div.shop-header-text.floating-text
 						div.title-action
+							div.card-overlay
+								img(src="images/msplayingcards/MSCard_overlay.png")
+						
 							div.logo-name
 								a(href="index.html")
-									img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS-LOGO-1.png" alt="Magic Singh" class="shop-card-logo" title="MagicSingh")
+									img(src="images/msplayingcards/MSLogo_brown.png" alt="Magic Singh" class="shop-card-logo" title="MagicSingh")
 								h3.product-title Playing Cards
 
 							form.buy-form(target='paypal', action='https://www.paypal.com/cgi-bin/webscr', method='post')
@@ -29,7 +29,7 @@ html
 								table
 									tbody
 										tr
-											td
+											td.quantity
 												input(type='hidden', name='on0', value='Quantity and Shipping')
 												| Quantity and Shipping
 										tr
@@ -52,35 +52,142 @@ html
 								p(style='text-decoration:underline;') Postage will be added upon checking out
 								input(type='hidden', name='currency_code', value='GBP')
 								input#purchase(type='submit', value='purchase', name='submit', alt='PayPal – The safer, easier way to pay online.')
-
+							
+							div.help
+								h3.bottom-arrow ↓
+								p If you have any questions, please get in touch at #[a(href="mailto:order@magicsingh.com") order@magicsingh.com]
 					video(class="msPlayingCardVideo" autoplay loop muted)
-						source(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.mp4" type="video/mp4")
-						source(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/video/SHOPLOOPVIDEO-SD.ogg" type="video/ogg")
+						source(src="images/msplayingcards/ShopVideoMP4.mp4" type="video/mp4")
 					
-					div.arrow.arrow-bounce
+					div.arrowBounceWrapper
+						a(href="#shop-content-start").arrow.arrow-bounce.js-arrow-bounce
 						
 
-				section.shop-content
+				section.shop-content#shop-content-start
 					section.text-callouts
 						p
 							strong Magic Singh's Custom branded playing Cards
 						| The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
 					
-					section
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0000_MSCARDS01.jpg', alt='0000 MSCARDS01')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0001_MSCARDS02.jpg', alt='0001 MSCARDS02')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0002_MSCARDS03.jpg', alt='0002 MSCARDS03')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0003_MSCARDS04.jpg', alt='0003 MSCARDS04')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0004_MSCARDS05.jpg', alt='0004 MSCARDS05')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0005_MSCARDS06.jpg', alt='0005 MSCARDS06')
-						img(src='http://magicsingh.com/v1/wp-content/themes/abracadabra/images/_0007_MSCARDS08.jpg', alt='0007 MSCARDS08')
+					section.mscard-sample
+						img(src='images/msplayingcards/MSCard_001.jpg', alt='0000 MSCARDS01')
+						img(src='images/msplayingcards/MSCard_002.jpg', alt='0001 MSCARDS02')
+						img(src='images/msplayingcards/MSCard_003.jpg', alt='0002 MSCARDS03')
+						img(src='images/msplayingcards/MSCard_004.jpg', alt='0003 MSCARDS04')
+						img(src='images/msplayingcards/MSCard_005.jpg', alt='0004 MSCARDS05')
+						img(src='images/msplayingcards/MSCard_006.jpg', alt='0005 MSCARDS06')
+						img(src='images/msplayingcards/MSCard_007.jpg', alt='0007 MSCARDS07')
 
 					section.text-callouts.shop-signoff
 						p
 							strong Only available through MagicSingh.com
+					
+			div.push
+		footer.shop-footer
+			+getFooter()
+
+		+getContactForm()
+
+		+addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+		+addScript('plugins/magnific/jquery.magnific-popup.js')
+		+addScript('scripts/main.js')
+		script.
+			$(document).ready(function() {
 
 
-		
+
+				
+				$('.showreel').magnificPopup({
+					type:'iframe', 
+
+					callbacks: {
+						open: function() {
+							$('.showreel').addClass('active');
+
+							$.magnificPopup.instance.close = function() {
+								$.magnificPopup.proto.close.call(this);
+								$('.showreel').removeClass('active');
+							}
+						}
+					}, 
+
+					mainClass:'mfp-fade',
+					removalDelay: 300, 
+					preloader: false, 
+					fixedcontentPos: false, 
+					enableEscapeKey: true
+
+					
+				});
+
+
+				$(window).resize(function() {
+
+					if (window.innerWidth < 500) {
+						bookNow[0].setAttribute('href', 'mailto:contact@magicsingh.com');
+						bookNow[1].setAttribute('href', 'mailto:contact@magicsingh.com');
+						
+					} else {
+						bookNow[0].setAttribute('href', '#contactForm');
+						bookNow[1].setAttribute('href', '#contactForm');
+					}
+				});
+
+				var bookNow = document.querySelectorAll('.bookNow');
+				//- var bookNowHref = bookNow.getAttribute('href');
+
+
+				//- if (bookNowHref.charAt(0) == '#') {
+				//- 	$('.bookNow').magnificPopup({
+				//- 		callbacks: {
+				//- 			open: function() {
+				//- 				$('.contactForm').css('display', 'block');
+				//- 			}
+				//- 		}, 
+				//- 		type: 'inline', 
+				//- 		preloader: false, 
+				//- 		modal: false,
+				//- 		enableEscapeKey: true
+				//- 	});
+				//- }
+
+				
+
+				$(".input-field input, .input-field textarea").focus(function() {
+					$(this).parent().find('label').css('color', '#bd9643');
+				}).blur(function() {
+					$(this).parent().find('label').css('color', '');
+				});
+
+				var top = document.querySelector('.js-navbar').offsetTop;
+
+				window.onscroll = function() {
+					var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+					var x = $('.js-navbar');
+
+					if (y >= 200) {
+						x.addClass('header-fixed');
+					} else {
+						x.removeClass('header-fixed');
+					}
+				}
+
+
+				$('.js-arrow-bounce').click(function() {
+					console.log($('.js-navbar').height());
+					$('body').animate({
+						scrollTop: $("#shop-content-start").offset().top-40
+					}, 'slow');
+					return false;
+				});
+
+			
+
+			});
+	
+			
+
+
 
 
 

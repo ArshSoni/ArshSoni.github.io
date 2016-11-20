@@ -1,0 +1,128 @@
+.contact {
+  padding-top: 10px;
+}
+
+.contactForm {
+  background: url('../images/contactForm.png');
+  display: none;
+  height: 474px;
+  margin: 2em auto;
+  overflow: hidden;
+  width: 654px;
+
+  .contact-top {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    top: 60px;
+    width: 450px;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .equity {
+      height: auto;
+      margin-top: 15px;
+      width: 60px;
+      opacity: .5;
+    }
+
+    .circle {
+      margin-top: 8px;
+      width: 50px;
+      opacity: .5;
+    }
+
+    .info {
+      display: inline-block;
+      margin: 8px 0;
+      vertical-align: middle;
+
+      p {
+        color: black;
+        font-size: 85%;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: normal;
+        margin: 5px;
+      }
+      
+      a {
+        color: #BF9743;
+      }
+    }
+  }
+
+  .form {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+
+    .innerFormWrapper {
+      box-sizing: border-box; 
+      left: 0;
+      margin:0 auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 140px;
+      width: 85%;
+
+      .input-field {
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0 10px 10px;
+        width: 250px;
+
+        input {
+          background: 0;
+          border: 0;
+          border-bottom: 1px solid black;
+          display: block;
+          outline: 0;
+          width: 100%;
+        }
+
+        label {
+          display: block;
+          font-size: 80%;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-align: left;
+          text-transform: uppercase;
+        }
+      }
+
+      .textarea {
+        width: 504px;
+
+        textarea {
+          background: 0;
+          border: 0;
+          border-bottom: 1px solid black;
+          display: block; 
+          min-height: 50px;
+          outline: 0;
+          width: 100%;
+        }
+      }
+
+      .form-submit {
+        background: 0;
+        border: 0;
+        color: black;
+        font-size: 150%;
+        font-weight: bolder;
+        text-transform: uppercase;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+          color: #BF9743;
+        }
+      }
+    }
+  }
+}

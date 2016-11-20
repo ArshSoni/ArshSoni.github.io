@@ -3,21 +3,17 @@ include includes/mixins
 doctype
 html.loading
 	head
-		+meta('MS', 'woo')
+		+meta('Magic Singh', 'woo')
 		+getStylesheets()
 		
 
 	body
 		//- +getAnimation()
 		div.wrap.fullsize-bg-image
-			+getNavbar()
+			+getNavbar('Home')
 
 			div.details
 				div.container
-					div.row
-						div.col-xs-12
-							a(class="navbar-brand" href="#")
-								+getLogo()
 						
 					div.bookNowWrappermain
 						a(href="#contactForm" class="bookNowmain")
@@ -42,31 +38,32 @@ html.loading
 
 		+addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
 		+addScript('plugins/magnific/jquery.magnific-popup.js')
+		+addScript('scripts/main.js')
 		script.
 			$(document).ready(function() {
 				
-				$('.showreel').magnificPopup({
-					type:'iframe', 
+				//- $('.showreel').magnificPopup({
+				//- 	type:'iframe', 
 
-					callbacks: {
-						open: function() {
-							$('.showreel').addClass('active');
+				//- 	callbacks: {
+				//- 		open: function() {
+				//- 			$('.showreel').addClass('active');
 
-							$.magnificPopup.instance.close = function() {
-								$.magnificPopup.proto.close.call(this);
-								$('.showreel').removeClass('active');
-							}
-						}
-					}, 
+				//- 			$.magnificPopup.instance.close = function() {
+				//- 				$.magnificPopup.proto.close.call(this);
+				//- 				$('.showreel').removeClass('active');
+				//- 			}
+				//- 		}
+				//- 	}, 
 
-					mainClass:'mfp-fade',
-					removalDelay: 300, 
-					preloader: false, 
-					fixedcontentPos: false, 
-					enableEscapeKey: true
+				//- 	mainClass:'mfp-fade',
+				//- 	removalDelay: 300, 
+				//- 	preloader: false, 
+				//- 	fixedcontentPos: false, 
+				//- 	enableEscapeKey: true
 
 					
-				});
+				//- });
 
 				$('.bookNow').magnificPopup({
 					callbacks: {
@@ -79,19 +76,23 @@ html.loading
 					modal: false,
 					enableEscapeKey: true
 				});
+				
+				$(".input-field").on('focus blur', 'input', function(e) {
+					var $this = $(this), 
+					parent = $this.parent(), 
+					label = $(parent).find('label');
 
-				$('.contact').magnificPopup({
-					callbacks: {
-						open: function() {
-							$('.contactForm').css('display', 'block');
-						}
-					}, 
-					type: 'inline', 
-					preloader: false, 
-					modal: false,
-					enableEscapeKey: true
+					if (e.type == 'focus') {
+						label.css('color', '#bd9643');
+					} else {
+						label.css('color', '');
+					}
+
 				});
 
-
-				
+				$(".input-field input, .input-field textarea").focus(function() {
+					$(this).parent().find('label').css('color', '#bd9643');
+				}).blur(function() {
+					$(this).parent().find('label').css('color', '');
+				})
 			});

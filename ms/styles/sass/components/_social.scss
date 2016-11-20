@@ -1,0 +1,85 @@
+.socialWrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 500px;
+  opacity: 1;
+  padding: 0;
+  position: relative;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: middle;
+  }
+
+  .bookNowWrapper {
+    img {
+      width: 120px;
+    }
+  }
+
+  .bookNow-mailTo {
+    display: none;
+  }
+
+  svg {
+    circle {
+      fill: rgba(189, 150, 67, .8);
+      transition: fill .3s ease-in-out;
+    }
+  }
+
+  .social-icon {
+    margin: 0 auto;
+    width: 40px;
+  }
+
+  .social-icon-twitter:hover svg circle,
+  .social-icon-twitter:focus svg circle {
+    fill: #1CB7EB;
+  }
+
+  .social-icon-insta:hover svg circle, 
+  .scoial-icon-twitter:focus svg circle {
+    fill: #444444;
+  }
+
+  .social-icon-fb:hover svg circle, 
+  .social-icon-fb:focus svg circle {
+    fill: #4E71A8;
+  }
+
+  .social-icon-yt:hover svg circle, 
+  .social-icon-yt:focus svg circle {
+    fill: #CA3737;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .socialWrapper {
+    max-width: auto;
+    width: 100%;
+  }
+
+  .bookNowWrapper {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+
+  .socialWrapper {
+    .bookNow-initial {
+      display: none;
+    }
+
+    .bookNow-mailTo {
+      display: inline-block;
+    }
+  }
+  
+}

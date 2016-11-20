@@ -1,0 +1,20 @@
+.fullsize-bg-image {
+  background-attachment: fixed;
+  background-image: url('../images/mainCopy.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.details {
+  bottom: 75px;
+  left: 0;
+  position: absolute; 
+  right: 0;
+  width: auto;
+  z-index: 1;
+
+  .bookNowWrappermain {
+    display: none;
+  }
+}
