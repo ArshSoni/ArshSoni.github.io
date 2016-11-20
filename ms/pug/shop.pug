@@ -8,7 +8,8 @@ html
 
 	body
 		div.wrap
-			+getNavbar('Shop')
+			header.header
+				+getNavbar('Shop')
 
 			div.shop
 				div.shop-header
@@ -164,9 +165,12 @@ html
 				window.onscroll = function() {
 					var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
 					var x = $('.js-navbar');
+					var header = $('.header');
+					
 
 					if (y >= 200) {
 						x.addClass('header-fixed');
+						header.height = 60;
 					} else {
 						x.removeClass('header-fixed');
 					}
