@@ -17,10 +17,18 @@ body {
 @font-face {
   font-family: 'governorRegular';
   src: url("governor.ttf"); }
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 40px; }
+
 .navbar-custom {
   border: 0;
   margin: 0;
-  min-height: auto;
+  min-height: inherit;
   padding: 0;
   position: relative;
   z-index: 99; }
@@ -108,32 +116,43 @@ body {
         padding: 0; }
         .navbar-custom .navWrapper .site-nav li a {
           color: rgba(255, 255, 255, 0.6);
-          display: block;
+          display: inline-block;
           font-size: 1em;
           font-weight: 300;
           letter-spacing: .1em;
           padding: 10px 0;
           text-transform: uppercase;
           transition: color .4s ease-in-out; }
-          .navbar-custom .navWrapper .site-nav li a:hover, .navbar-custom .navWrapper .site-nav li a:focus {
-            background: 0;
-            color: #fff; }
-            .navbar-custom .navWrapper .site-nav li a:hover .bottom-border, .navbar-custom .navWrapper .site-nav li a:focus .bottom-border {
-              display: block; }
-          .navbar-custom .navWrapper .site-nav li a .bottom-border {
-            border: 2px solid orange;
-            border-radius: 10px;
-            bottom: 0;
-            display: none;
-            left: 0;
-            margin: 0 auto;
+          .navbar-custom .navWrapper .site-nav li a:after {
+            content: '';
+            display: block;
+            margin: auto;
+            height: 3px;
+            width: 0%;
+            background: transparent;
+            transition: width .4s ease-in-out, background .4s ease-in-out;
             position: absolute;
+            left: 0;
             right: 0;
-            width: 50%; }
+            bottom: 2px;
+            border-radius: 4px; }
+          .navbar-custom .navWrapper .site-nav li a:hover, .navbar-custom .navWrapper .site-nav li a:focus {
+            background: transparent;
+            color: white;
+            outline: 0; }
+          .navbar-custom .navWrapper .site-nav li a:hover:after {
+            width: 50%;
+            background: orange;
+            transition: width .4s ease-in-out; }
         .navbar-custom .navWrapper .site-nav li .active {
-          color: white; }
-          .navbar-custom .navWrapper .site-nav li .active .bottom-border {
-            display: block; }
+          color: white;
+          /*.bottom-border {
+            display: block;
+          }*/ }
+          .navbar-custom .navWrapper .site-nav li .active:after {
+            width: 50%;
+            background: orange;
+            left: 0; }
 
 .header-fixed {
   background-color: black;
@@ -252,7 +271,6 @@ body {
 /* Pages */
 .fullsize-bg-image {
   background-attachment: fixed;
-  background-image: url("../images/mainCopy.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -581,6 +599,92 @@ body {
       width: 100%; }
     .shop-header .shop-header-text .title-action .buy-form p {
       margin-bottom: 1em; } }
+/*
+.wrap {
+  height: 100%;
+}
+
+.shop {
+  min-height: 100%;
+  height: 100%;
+
+  .shop-header {
+    background-image: url('http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .video-wrapper {
+
+      .msPlayingCardVideo {
+        display: block;
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left:0;
+      }
+    }
+
+    .header-content {
+      margin: 10em auto 0;
+      color: white;
+
+      .logo-name {
+        text-align: center;
+      }
+    }
+  }
+
+  .shop-section-wrapper {
+    background-color: #BD9744;
+
+    .text-callouts {
+      color: white;
+      font-size: 1em;
+      letter-spacing: .05em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      padding: 2em 1em;
+      max-width:720px;
+      width:100;
+      margin: 0 auto;
+      text-align:center;
+      font-weight:300;
+    }
+
+    .msPlayingCard-sampleImages {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-bottom: 2px solid #BD9744;
+      }
+    }
+  }
+
+  /*.shop-header {
+    background-image: url('http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+
+
+  .msPlayingCardVideo { 
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+}*/
 .bg {
   background-attachment: fixed;
   background-image: url("../images/404.jpg");

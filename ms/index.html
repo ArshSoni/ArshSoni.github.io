@@ -3,6 +3,7 @@
   <head>
     <title>Magic Singh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
     <meta name="description" content="woo"/>
     <meta name="author" content="Ryan Amparo"/>
     <meta http-equiv="content"/>
@@ -14,14 +15,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"/>
   </head>
   <body>
-    <div class="wrap fullsize-bg-image">
+    <div class="wrap fullsize-bg-image b-lazy" data-src="images/mainCopy.jpg">
       <header class="header">
         <nav class="navbar navbar-custom js-navbar">
           <input class="inputDropdown sr-only" id="dropdown" type="checkbox"/>
           <label class="navbar-toggle" for="dropdown">
             <div class="hamburgerWrap"> <span></span><span></span><span></span></div>
           </label><img class="spade grayscale" src="images/spade.png"/>
-          <div class="collapse navbar-collapse navWrapper" id="myNavbar">
+          <div class="collapse navbar-collapse navWrapper">
             <ul class="nav navbar-nav site-nav js-site-nav">
               <li><a class="active" href="index.html">Home<span class="js-bottom-border bottom-border"></span></a>
               </li>
@@ -55,7 +56,7 @@
       </div>
     </footer>
     <div class="contactForm" id="contactForm">
-      <form class="form" name="main-form" action="/" method="post">
+      <form class="form" name="main-form" action="" method="post">
         <div class="contact-top"><img class="circle pull-left" src="images/magic_circle.png"/><img class="equity pull-right" src="images/equity-black.png"/>
           <div class="info">
             <p>CONTACT <a href="tel:0778712666">+44778712666</a></p>
@@ -65,89 +66,37 @@
         <div class="innerFormWrapper">
           <div class="input-field">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name"/>
+            <input class="form-field" type="text" name="name" id="name"/>
           </div>
           <div class="input-field">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email"/>
+            <input class="form-field" type="email" name="email" id="email"/>
           </div>
           <div class="input-field">
             <label for="occasion">Occasion</label>
-            <input type="text" name="occasion" id="occasion"/>
+            <input class="form-field" type="text" name="occasion" id="occasion"/>
           </div>
           <div class="input-field">
             <label for="telephone">Telephone</label>
-            <input type="text" name="telephone" id="telephone"/>
+            <input class="form-field" type="text" name="telephone" id="telephone"/>
           </div>
           <div class="input-field textarea">
             <label for="message">Your Message</label>
-            <textarea name="message" id="message"></textarea>
+            <textarea class="form-field" name="message" id="message"></textarea>
           </div>
           <div class="input-controls">
-            <button class="form-submit" type="submit" name="submit">Submit</button>
+            <button class="form-submit js-form-submit" type="submit" name="submit">Submit</button>
           </div>
         </div>
       </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="plugins/magnific/jquery.magnific-popup.js"></script>
+    <script src="scripts/lazy.js"></script>
     <script src="scripts/main.js"></script>
     <script>
-      $(document).ready(function() {
-      	
-      	//- $('.showreel').magnificPopup({
-      	//- 	type:'iframe', 
+      var bLazy = new Blazy({
       
-      	//- 	callbacks: {
-      	//- 		open: function() {
-      	//- 			$('.showreel').addClass('active');
-      
-      	//- 			$.magnificPopup.instance.close = function() {
-      	//- 				$.magnificPopup.proto.close.call(this);
-      	//- 				$('.showreel').removeClass('active');
-      	//- 			}
-      	//- 		}
-      	//- 	}, 
-      
-      	//- 	mainClass:'mfp-fade',
-      	//- 	removalDelay: 300, 
-      	//- 	preloader: false, 
-      	//- 	fixedcontentPos: false, 
-      	//- 	enableEscapeKey: true
-      
-      		
-      	//- });
-      
-      	$('.bookNow').magnificPopup({
-      		callbacks: {
-      			open: function() {
-      				$('.contactForm').css('display', 'block');
-      			}
-      		}, 
-      		type: 'inline', 
-      		preloader: false, 
-      		modal: false,
-      		enableEscapeKey: true
-      	});
-      	
-      	$(".input-field").on('focus blur', 'input', function(e) {
-      		var $this = $(this), 
-      		parent = $this.parent(), 
-      		label = $(parent).find('label');
-      
-      		if (e.type == 'focus') {
-      			label.css('color', '#bd9643');
-      		} else {
-      			label.css('color', '');
-      		}
-      
-      	});
-      
-      	$(".input-field input, .input-field textarea").focus(function() {
-      		$(this).parent().find('label').css('color', '#bd9643');
-      	}).blur(function() {
-      		$(this).parent().find('label').css('color', '');
-      	})
       });
     </script>
   </body>

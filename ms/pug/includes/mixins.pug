@@ -1,6 +1,7 @@
 mixin meta(title, description)
   title #{title}
   meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(charset="UTF-8")
   meta(name='description', content=description)
   meta(name='author' content='Ryan Amparo')
   meta(http-equiv='content')
@@ -31,7 +32,7 @@ mixin getNavbar(currentPage)
 
     img.spade.grayscale(src="images/spade.png")
 
-    div.collapse.navbar-collapse.navWrapper#myNavbar
+    div.collapse.navbar-collapse.navWrapper
       ul.nav.navbar-nav.site-nav.js-site-nav
   
 
@@ -89,7 +90,7 @@ mixin getFooter
 
 mixin getContactForm
   div.contactForm#contactForm
-    form.form(name='main-form', action='/', method='post')
+    form.form(name='main-form', action='', method='post')
       div.contact-top
         img.circle.pull-left(src="images/magic_circle.png")
         img.equity.pull-right(src="images/equity-black.png")
@@ -101,26 +102,26 @@ mixin getContactForm
       div.innerFormWrapper
         div.input-field
           label(for="name") Name
-          input(type="text" name="name" id="name")
+          input(type="text" name="name" id="name" class="form-field")
 
         div.input-field
           label(for="email") Email
-          input(type="email" name="email" id="email")
+          input(type="email" name="email" id="email" class="form-field")
 
         div.input-field
           label(for="occasion") Occasion
-          input(type="text" name="occasion" id="occasion")
+          input(type="text" name="occasion" id="occasion" class="form-field")
 
         div.input-field
           label(for="telephone") Telephone
-          input(type="text" name="telephone" id="telephone")
+          input(type="text" name="telephone" id="telephone" class="form-field")
         
         div.input-field.textarea
           label(for="message") Your Message
-          textarea(name="message" id="message")
+          textarea(name="message" id="message" class="form-field")
 
         div.input-controls
-          button(type="submit" name="submit" class="form-submit") Submit
+          button(type="submit" name="submit" class="form-submit js-form-submit") Submit
 
 mixin getAnimation
   .svgwrapper

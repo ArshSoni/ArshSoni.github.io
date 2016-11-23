@@ -113,7 +113,7 @@
       </div>
     </footer>
     <div class="contactForm" id="contactForm">
-      <form class="form" name="main-form" action="" method="post">
+      <form class="form" name="main-form" action="/" method="post">
         <div class="contact-top"><img class="circle pull-left" src="images/magic_circle.png"/><img class="equity pull-right" src="images/equity-black.png"/>
           <div class="info">
             <p>CONTACT <a href="tel:0778712666">+44778712666</a></p>
@@ -123,33 +123,32 @@
         <div class="innerFormWrapper">
           <div class="input-field">
             <label for="name">Name</label>
-            <input class="form-field" type="text" name="name" id="name"/>
+            <input type="text" name="name" id="name"/>
           </div>
           <div class="input-field">
             <label for="email">Email</label>
-            <input class="form-field" type="email" name="email" id="email"/>
+            <input type="email" name="email" id="email"/>
           </div>
           <div class="input-field">
             <label for="occasion">Occasion</label>
-            <input class="form-field" type="text" name="occasion" id="occasion"/>
+            <input type="text" name="occasion" id="occasion"/>
           </div>
           <div class="input-field">
             <label for="telephone">Telephone</label>
-            <input class="form-field" type="text" name="telephone" id="telephone"/>
+            <input type="text" name="telephone" id="telephone"/>
           </div>
           <div class="input-field textarea">
             <label for="message">Your Message</label>
-            <textarea class="form-field" name="message" id="message"></textarea>
+            <textarea name="message" id="message"></textarea>
           </div>
           <div class="input-controls">
-            <button class="form-submit js-form-submit" type="submit" name="submit">Submit</button>
+            <button class="form-submit" type="submit" name="submit">Submit</button>
           </div>
         </div>
       </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="plugins/magnific/jquery.magnific-popup.js"></script>
-    <script src="scripts/validate.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
