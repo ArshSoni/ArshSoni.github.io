@@ -19,9 +19,6 @@
     }
   }
 
-  .bookNow-mailTo {
-    display: none;
-  }
 
   svg {
     circle {
@@ -69,17 +66,17 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+// @media screen and (max-width: 500px) {
   
 
-  .socialWrapper {
-    .bookNow-initial {
-      display: none;
-    }
+//   .socialWrapper {
+//     .bookNow-initial {
+//       display: none;
+//     }
 
-    .bookNow-mailTo {
-      display: inline-block;
-    }
-  }
+//     .bookNow-mailTo {
+//       display: inline-block;
+//     }
+//   }
   
-}
+// }

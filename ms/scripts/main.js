@@ -1,9 +1,20 @@
 $(document).ready(function() {
 
+  function emptyForm() {
+    $(".form")[0].reset();
+    $(".form-message").html('');
+  }
+
   $('.bookNow').magnificPopup({
     callbacks: {
       open: function() {
         $('.contactForm').css('display', 'block');
+
+        $.magnificPopup.instance.close = function() {
+          $.magnificPopup.proto.close.call(this);
+          emptyForm();
+
+        }
       }
     }, 
     type: 'inline', 
@@ -52,19 +63,35 @@ $(document).ready(function() {
     
   });
 
-  function changeContactHrefOnWindowResize() {
-    var bookNow = document.querySelectorAll('.bookNow');
+  // function changeContactHrefOnWindowResize() {
+  //   var bookNow = document.querySelectorAll('.bookNow');
 
-    $(window).resize(function() {
-      if (window.innerWidth < 500) {
-        bookNow[0].setAttribute('href', 'mailto:contact@magicsingh.com');
-        bookNow[1].setAttribute('href', 'mailto:contact@magicsingh.com');
+  //   $(window).resize(function() {
+  //     if (window.innerWidth < 500) {
+  //       bookNow[0].setAttribute('href', 'mailto:contact@magicsingh.com');
+  //       bookNow[1].setAttribute('href', 'mailto:contact@magicsingh.com');
+
         
-      } else {
-        bookNow[0].setAttribute('href', '#contactForm');
-        bookNow[1].setAttribute('href', '#contactForm');
-      }
-    });
+        
+  //     } else {
+  //       bookNow[0].setAttribute('href', '#contactForm');
+  //       bookNow[1].setAttribute('href', '#contactForm');
+  //     }
+  //   });
+  // }
+
+  function checkHref() {
+    var bookNow = document.querySelector('.bookNow');
+
+    if (window.innerWidth < 500) {
+      bookNow.addEventListener('click', function() {
+        $(".overlay").addClass('visible')
+      });
+
+      $('.cross').on('click', function() {
+        $(".overlay").removeClass('visible');
+      })
+    } 
   }
 
 
@@ -94,9 +121,44 @@ $(document).ready(function() {
     });
   }
 
+  function validateForm() {
+    var formField = $(".form-field");
+    var message = $('.form-message');
+    var filled = false;
 
+    $(".js-form-submit").on('click', function(e) {
+      e.preventDefault();
+      
+      for (var i = 0; i < formField.length; i++) {
+        if ($(formField[i]).val().length == 0) {
+          message.html('Please complete all the fields');
+          $(formField[i]).css('border-bottom', "1px solid red");
+          filled = false;
+        } 
+
+        else {
+          $(formField[i]).css('border-bottom', '');
+          filled = true;
+        }
+
+      }
+
+        var dataString = $('.form').serialize();
+        $.ajax({
+          type: 'post', 
+          url: 'test.php', 
+          data: dataString, 
+          success: function(html) {
+            message.html(html);
+          }
+        });
+    });
+  }
+
+  validateForm();
   arrowBounceShop();
   fixedHeaderOnScroll();
-  changeContactHrefOnWindowResize();
+  // changeContactHrefOnWindowResize();
   contactFormInputFocus();
+  checkHref();
 });

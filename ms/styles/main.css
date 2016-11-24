@@ -174,6 +174,8 @@ body {
       margin: 0 auto;
       text-align: center;
       width: 50px; }
+      .navbar-custom .spade img {
+        width: 100%; }
     .navbar-custom .navbar-toggle {
       display: block;
       height: 25px;
@@ -233,8 +235,6 @@ body {
     vertical-align: middle; }
   .socialWrapper .bookNowWrapper img {
     width: 120px; }
-  .socialWrapper .bookNow-mailTo {
-    display: none; }
   .socialWrapper svg circle {
     fill: rgba(189, 150, 67, 0.8);
     transition: fill .3s ease-in-out; }
@@ -263,11 +263,6 @@ body {
     display: block;
     margin: 0 auto;
     text-align: center; } }
-@media screen and (max-width: 500px) {
-  .socialWrapper .bookNow-initial {
-    display: none; }
-  .socialWrapper .bookNow-mailTo {
-    display: inline-block; } }
 /* Pages */
 .fullsize-bg-image {
   background-attachment: fixed;
@@ -379,6 +374,32 @@ body {
         transition: color .3s ease-in-out; }
         .contactForm .form .innerFormWrapper .form-submit:hover {
           color: #BF9743; }
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 100%;
+  transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  visibility: hidden;
+  opacity: 0; }
+  .overlay p {
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+  .overlay .cross {
+    color: white;
+    font-size: 100px;
+    float: right; }
+  .overlay.visible {
+    visibility: visible;
+    opacity: 1; }
 
 .shop-header {
   background-image: url("http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg");
