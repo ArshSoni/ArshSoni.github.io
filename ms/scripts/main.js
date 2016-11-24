@@ -9,7 +9,13 @@ $(document).ready(function() {
     type: 'inline', 
     preloader: false, 
     modal: false,
-    enableEscapeKey: true
+    enableEscapeKey: true, 
+    disableOn: function() {
+      if( $(window).width() < 600 ) {
+        return false;
+      }
+      return true;
+    }
   });
     
 
@@ -88,20 +94,6 @@ $(document).ready(function() {
     });
   }
 
-  var form = document.querySelector('.form');
-
-  var validator = new FormValidator(form, [{
-      name: 'name',
-      display: 'required',
-      rules: 'required'
-  }, {
-      name: 'email',
-      rules: 'valid_email'
-  }], function(errors, event) {
-      if (errors.length > 0) {
-          // Show the errors
-      }
-  });
 
   arrowBounceShop();
   fixedHeaderOnScroll();

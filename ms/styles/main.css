@@ -507,9 +507,9 @@ body {
       margin-left: -20px;
       width: 40px; }
     .shop-header .arrowBounceWrapper .arrow-bounce {
-      -moz-animation: bounce 2s infinite;
-      -webkit-animation: bounce 2s infinite;
-      animation: bounce 2s infinite; }
+      -moz-animation: bounce 2.5s infinite;
+      -webkit-animation: bounce 2.5s infinite;
+      animation: bounce 2.5s infinite; }
 
 .shop-content {
   display: block;
