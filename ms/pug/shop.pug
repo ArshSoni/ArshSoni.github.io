@@ -88,6 +88,12 @@ html
 			+getFooter()
 
 		+getContactForm()
+		div.overlay
+			span.cross x
+			div.contact-info
+				p Phone: #[a(href="tel:0778712666") +44778712666]
+				p Email: #[a(href="mailto:contact@magicsingh.com") contact@magicsingh.com]
+
 
 		+addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
 		+addScript('plugins/magnific/jquery.magnific-popup.js')
