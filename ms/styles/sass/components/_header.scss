@@ -192,6 +192,7 @@
   position: fixed;
   right: 0;
   transition: position .4s ease-in-out;
+  z-index: 999;
 
   .navWrapper {
     .site-nav {

@@ -162,7 +162,8 @@ body {
   padding: 0;
   position: fixed;
   right: 0;
-  transition: position .4s ease-in-out; }
+  transition: position .4s ease-in-out;
+  z-index: 999; }
   .header-fixed .navWrapper .site-nav {
     padding: 0; }
 
@@ -220,6 +221,10 @@ body {
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0; }
+
+.mfp-close-btn-in .mfp-close {
+  color: white !important;
+  right: 50px; }
 
 .socialWrapper {
   box-sizing: border-box;
@@ -407,9 +412,15 @@ body {
       .overlay .contact-info p a {
         color: #BF9743; }
   .overlay .cross {
-    color: white;
-    font-size: 100px;
-    float: right; }
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 50px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    transition: color .4s ease-in-out; }
+    .overlay .cross:hover, .overlay .cross:focus {
+      color: white;
+      cursor: pointer; }
   .overlay.visible {
     visibility: visible;
     opacity: 1; }
@@ -633,6 +644,24 @@ body {
       width: 100%; }
     .shop-header .shop-header-text .title-action .buy-form p {
       margin-bottom: 1em; } }
+.b-lazy .animate {
+  opacity: 0;
+  -ms-transform: scale(3);
+  -moz-transform: scale(3);
+  -webkit-transform: scale(3);
+  transform: scale(3);
+  -ms-transition: all .4s;
+  -moz-transition: all .4s;
+  -webkit-transition: all .4s;
+  transition: all .4s; }
+
+.b-loaded .animate {
+  opacity: 1;
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+
 /*
 .wrap {
   height: 100%;

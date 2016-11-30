@@ -170,9 +170,18 @@
 
 
   .cross {
-    color: white;
-    font-size: 100px;
-    float:right;
+    color: rgba(white, .6);
+    font-size: 50px;
+    position: absolute;
+    top:50px;
+    right:50px;
+    transition: color .4s ease-in-out;
+
+    &:hover, 
+    &:focus {
+      color: rgba(white, 1);
+      cursor: pointer;
+    }
 
   }
 

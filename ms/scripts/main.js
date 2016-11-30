@@ -105,8 +105,9 @@ $(document).ready(function() {
             }
           }
         }, 
+        type: 'inline',
         mainClass:'mfp-fade',
-        type: 'inline', 
+        removalDelay: 300,
         preloader: false, 
         modal: false,
         enableEscapeKey: true, 
@@ -261,14 +262,68 @@ $(document).ready(function() {
       shopSection = document.querySelector(shopSectionSelector);
       
 
-    function addArrowEventListener() {
-      arrowBounce.addEventListener('click', function() {
-        body.scrollTop = shopSection.offsetTop-60;
-      });
+    function getElementY(query) {
+      return window.pageYOffset + document.querySelector(query).getBoundingClientRect().top
+    }
+
+    function doScrolling(element, duration) {
+      var startingY = window.pageYOffset
+      var elementY = getElementY(element)
+      // If element is close to page's bottom then window will scroll only to some position above the element.
+      var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY
+      var diff = targetY - startingY
+      // Easing function: easeInOutCubic
+      // From: https://gist.github.com/gre/1650294
+      var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
+      var start
+
+      if (!diff) return
+
+      // Bootstrap our animation - it will get called right before next frame shall be rendered.
+      window.requestAnimationFrame(function step(timestamp) {
+        if (!start) start = timestamp
+        // Elapsed miliseconds since start of scrolling.
+        var time = timestamp - start
+        // Get percent of completion in range [0, 1].
+        var percent = Math.min(time / duration, 1)
+        // Apply the easing.
+        // It can cause bad-looking slow frames in browser performance tool, so be careful.
+        percent = easing(percent)
+
+        window.scrollTo(0, (startingY + diff * percent) - 40)
+
+        // Proceed with animation as long as we wanted it to.
+        if (time < duration) {
+          window.requestAnimationFrame(step)
+        }
+      })
     }
 
     function init() {
-      addArrowEventListener();
+      arrowBounce.addEventListener('click', function() {
+        doScrolling(shopSectionSelector, 1000);
+      });
+    }
+
+    return {
+      init: init
+    }
+
+  })();
+
+
+  var navbarDropdown = (function() {
+    var navbarSelector = '.js-navbar',
+      navbar = document.querySelector(navbarSelector);
+
+    function navbarAndDocumentEventListeners() {
+      // document.addEventListener('click', function() {
+      //   navbar.style.maxHeight = '0';
+      // })
+    }
+
+    function init() {
+      navbarAndDocumentEventListeners();
     }
 
     return {
@@ -276,12 +331,19 @@ $(document).ready(function() {
     }
   })();
 
+  
+  var bLazy = new Blazy({
+    selector: 'img'
+  });
 
   /* Set up - inits */
   Overlay.init();
   Magnific.init(); /* Showreel and Contact Form */
   /* fixed header already initialisd */
   ContactForm.init();
+  navbarDropdown.init();
+  ArrowBounce.init('#shop-content-start');
+
 
 
 });
