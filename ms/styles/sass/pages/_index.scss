@@ -1,19 +1,18 @@
-.fullsize-bg-image {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@include block('home') {
+
+  @include modifier('fullsizeImage') {
+    background-image: url('../images/originalLarge.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
-.details {
-  bottom: 75px;
-  left: 0;
-  position: absolute; 
-  right: 0;
-  width: auto;
-  z-index: 1;
-
-  .bookNowWrappermain {
-    display: none;
+@media screen and (max-width: 767px) {
+  @include block('home') {
+    @include modifier('fullsizeImage') {
+      background-image: url('../images/originalSmall.jpg');
+    }
   }
 }

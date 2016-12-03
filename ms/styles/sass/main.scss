@@ -1,15 +1,16 @@
+@import "components/bemify";
+
 @import 'components/base';
 @import 'components/fonts';
 
 @import 'components/header';
 
 
-
-
-
 @import 'components/magnific';
 @import 'components/social';
 
+@import 'components/overlay';
+@import 'components/spinner';
 
 /* Pages */
 @import 'pages/index';

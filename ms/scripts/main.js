@@ -1,10 +1,26 @@
 $(document).ready(function() {
+
+  function debounce(func, wait, immediate) {
+    var timeout;
+      return function() {
+          var context = this, args = arguments;
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+              timeout = null;
+              if (!immediate) func.apply(context, args);
+          }, wait);
+          if (immediate && !timeout) func.apply(context, args);
+      };
+  };
+
+
+
   
   var Overlay = (function() {
     var bookNow = document.querySelectorAll('.bookNow'), 
-      overlay = document.querySelector('.overlay'), 
-      visibleClass = ' visible',
-      overlayCross = document.querySelector('.cross'),
+      overlay = document.querySelector('.js-overlay'), 
+      visibleClass = ' overlay__visible',
+      overlayCross = document.querySelector('.js-overlayClose'),
       containsVisibleClass = (overlay.className.indexOf(visibleClass) > -1);
 
 
@@ -33,6 +49,11 @@ $(document).ready(function() {
         bookNow[i].removeEventListener('click', _showOrHideOverlay);
       }
 
+      if (containsVisibleClass) {
+        overlay.className = overlay.className.replace(visibleClass, '');
+        containsVisibleClass = false;
+      }
+
       overlayCross.removeEventListener('click', _showOrHideOverlay);
     }
 
@@ -40,14 +61,17 @@ $(document).ready(function() {
 
       resizeOnLoad = true;
 
-      window.addEventListener('resize', function() {
+      var resize = debounce(function() {
         if (window.innerWidth < 767) {
           addShowOverlayEventListener();
           addHideOverlayEventListener();
         } else {
           removeAllEventListeners();
         }
-      });
+        
+      }, 350);
+
+      window.addEventListener('resize', resize);
 
       if (resizeOnLoad) {
         window.dispatchEvent(new Event('resize'));
@@ -91,7 +115,7 @@ $(document).ready(function() {
 
     function initContactForm() {
       var bookNowSelector = '.bookNow'
-        contactFormSelector = '.contactForm',
+        contactFormSelector = '.js-contactForm',
         $bookNow = $(bookNowSelector),
         $contactForm = $(contactFormSelector);
 
@@ -101,6 +125,8 @@ $(document).ready(function() {
             $contactForm.css('display', 'block');
 
             $.magnificPopup.instance.close = function() {
+              $(".contact__form")[0].reset();
+              $(".contact__submitMessage").html('');
               $.magnificPopup.proto.close.call(this);
             }
           }
@@ -139,26 +165,31 @@ $(document).ready(function() {
     }
 
     function validateForm() {
-      var formFieldsSelector = '.form-field',
-        messageSelector = '.form-message',
+      var formFieldsSelector = '.contact__inputField',
+        messageSelector = '.contact__submitMessage',
         submitButtonSelector = '.js-form-submit',
         allFieldsFull = false,
         formFields = document.querySelectorAll(formFieldsSelector),
         message = document.querySelector(messageSelector),
         submitButton = document.querySelector(submitButtonSelector);
+
+        var inputDebounce = debounce(function() {
+          if (this.value == '') {
+            this.style.borderBottom = '1px solid red';
+            allFieldsFull = false;
+          } else {
+            this.style.borderBottom = "1px solid green";
+          }
+          
+        }, 350);
         
       function checkCurrentField() {
         for (var i = 0; i < formFields.length; i++) {
-          formFields[i].addEventListener('input', function() {
-            if (this.value == '') {
-              this.style.borderBottom = '1px solid red';
-              allFieldsFull = false;
-            } else {
-              this.style.borderBottom = "1px solid green";
-            }
-          });
+          formFields[i].addEventListener('input', inputDebounce);
 
         }
+
+
       }
 
       function checkAllFields() {
@@ -174,31 +205,58 @@ $(document).ready(function() {
       }
 
       function submitEventListener() {
-        submitButton.addEventListener('click', function() {
-          checkAllFields();
-          checkCurrentField();
+        submitButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          // checkAllFields();
+          // checkCurrentField();
           ajax();
         });
       }
+      checkCurrentField();
       submitEventListener();
-
       function ajax() {
-        if (allFieldsFull) {
-          var dataString = $('.form').serialize();
-          $.ajax({
-            type: 'post', 
-            url: 'test.php', 
-            data: dataString, 
-            beforeSend: function() {
-              message.html('loading');
-            },
+        // if (allFieldsFull) {
+        //   var dataString = $('.contact__form').serialize();
+        //   $.ajax({
+        //     type: 'post', 
+        //     url: 'test.php', 
+        //     data: dataString, 
+        //     beforeSend: function() {
+        //       message.html('loading');
+        //     },
             
+        //     success: function(html) {
+        //       message.html(html);
+        //     }
+        //   });
+        // }
+
+          if (!message.innerHTML == '') {
+            message.innerHTML = '';
+          }
+
+          var dataString = $(".contact__form").serialize();
+          $(".spinner").css('display', 'block');
+          $.ajax({
+            type: 'post',
+            url: 'test.php',
+            data: dataString,
             success: function(html) {
-              message.html(html);
-              
+              setTimeout(function() {
+                $(".spinner").css('display', 'none');
+
+                var response = html.trim();
+                if (response == 'success') {
+                  message.innerHTML = 'Thank you for your enquiry. We will get back to you shortly.';
+                } else if (response == 'fail') {
+                  message.innerHTML = 'Please fill in all fields.'
+                } else {
+                  // message.innerHTML = 'There was a problem sending your message.';
+                  message.innerHTML = response;
+                }
+              }, 500);
             }
           });
-        }
       }
     }
 
@@ -240,11 +298,11 @@ $(document).ready(function() {
       var header = $('.header');
       
 
-      if (y >= 200) {
-        x.addClass('header-fixed');
+      if (y >= 350) {
+        x.addClass('navbar--fixed');
         header.height = 60;
       } else {
-        x.removeClass('header-fixed');
+        x.removeClass('navbar--fixed');
       }
     }
 
@@ -300,6 +358,9 @@ $(document).ready(function() {
     }
 
     function init() {
+      if (!arrowBounce || !shopSection) {
+        return;
+      }
       arrowBounce.addEventListener('click', function() {
         doScrolling(shopSectionSelector, 1000);
       });
@@ -332,9 +393,13 @@ $(document).ready(function() {
   })();
 
   
-  var bLazy = new Blazy({
-    selector: 'img'
-  });
+  // var bLazy = new Blazy({
+  //   selector: 'img', 
+
+  //   success: function() {
+  //     $(".loadingAnimation").css('display', 'none');
+  //   }
+  // });
 
   /* Set up - inits */
   Overlay.init();

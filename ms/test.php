@@ -1,11 +1,25 @@
 <?php
+
+  function test_data($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+
+  function stringExists($var, $string) {
+    if (!strpos($var, $string)) {
+      $var .= $string;
+    }
+    return $var;
+  }
   
-  if ($_POST) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $occasion = $_POST['occasion'];
-    $telephone = $_POST['telephone'];
-    $message = $_POST['message'];
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = test_data($_POST['name']);
+    $email = test_data($_POST['email']);
+    $occasion = test_data($_POST['occasion']);
+    $telephone = test_data($_POST['telephone']);
+    $message = test_data($_POST['message']);
 
     $fields = [
       $name, 
@@ -15,16 +29,56 @@
       $message
     ];
 
-    $submit = false;
-    for($i = 0; $i < count($fields); $i++) {
-      if ($fields[$i] != '') {
-        $submit = true;
+    $generalRegex = "/^[a-zA-Z ]*$/";
+    $phoneRegex = "^[0-9]*$";
+
+    $allFieldsFull = false;
+    $counter = 0;
+    $numOfFields = count($fields);
+    $errors = '';
+
+    for($i = 0; $i < $numOfFields; $i++) {
+      if (empty($fields[$i]) || $fields[$i] == '') {
+        $allFieldsFull = false;
+      } else {
+        $allFieldsFull = true;
       }
     }
 
-    if ($submit == true) {
-      echo 'email sent';
+    if ($allFieldsFull) {
+
+      if (!preg_match($generalRegex, $name)
+        || !preg_match($generalRegex, $occasion)
+        || !preg_match($generalRegex, $message)) {
+          
+        if (!strpos($errors, 'Please enter characters only.')) {
+          $errors .= 'Please enter characters only.';
+        }
+      }
+      
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!strpos($errors, 'Please enter a valid email.')) {
+          $errors .= 'Please enter a valid email.';
+        }
+      }
+      
+      if (!preg_match($phoneRegex, $telephone)) {
+        if (!strpos($errors, 'Please enter a valid phone number.')) {
+          $errors .= 'Please enter a valid phone number.';
+        }
+      }
+    } else {
+      $errors = 'Please fill in all the fields';
     }
+
+
+    if (!empty($errors)) {
+      echo $errors;
+    } 
+
+    // echo ($allFieldsFull == true) ? 'success' : 'fail';
+
+
 
 
   }

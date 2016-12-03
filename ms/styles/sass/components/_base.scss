@@ -1,10 +1,28 @@
+html {
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+  background-color: black;
+}
+
+
 html, body {
   height: 100%;
+}
+
+.loading {
+  background: black url('../images/spade.png');
+  -webkit-transition: background-color 0;
+  transition: background-color 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
 }
 
 body {
   font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
   font-size: 16px;
+  -webkit-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
 
   /* Main Content Container */
   .wrap {
@@ -17,5 +35,13 @@ body {
   .push, 
   .footer {
     height: 60px;
+  }
+}
+
+.loading {
+  body {
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
   }
 }

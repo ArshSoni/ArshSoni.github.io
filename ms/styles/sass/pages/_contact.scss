@@ -1,193 +1,131 @@
-.contact {
+@include block('contact') {
   padding-top: 10px;
-}
-
-.contactForm {
-  background: url('../images/contactForm.png');
-  display: none;
-  height: 474px;
-  margin: 2em auto;
   overflow: hidden;
-  width: 654px;
+  display: none;
+  width: 700px;
+  margin:0 auto;
 
-  .contact-top {
+  @include element('form') {
+    background: url("../images/contactForm.png");
+    height: 474px;
+    width: 654px;
+    margin: 2em auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @include element('formHeader') {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     text-align: center;
     top: 60px;
     width: 450px;
+  }
 
-    img {
-      display: inline-block;
-      vertical-align: middle;
-    }
+  @include element('headerImage') {
+    display: inline-block;
+    vertical-align: middle;
 
-    .equity {
-      height: auto;
-      margin-top: 15px;
-      width: 60px;
-      opacity: .5;
-    }
-
-    .circle {
+    @include modifier('magicCircle') {
+      float:left;
       margin-top: 8px;
       width: 50px;
       opacity: .5;
     }
+    @include modifier('equity') {
+      float:right;
+      margin-top: 15px;
+      width: 60px;
+      height: auto;
+      opacity: .5;
+    }
+  }
 
-    .info {
-      display: inline-block;
-      margin: 8px 0;
-      vertical-align: middle;
+  @include element('info') {
+    display: inline-block;
+    margin: 8px 0;
+    vertical-align: middle;
+  }
 
-      p {
-        color: black;
-        font-size: 85%;
-        font-weight: 300;
-        letter-spacing: 1px;
-        line-height: normal;
-        margin: 5px;
-      }
-      
-      a {
+  @include element('text') {
+    color: black;
+    font-size: 85%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: normal;
+    margin: 5px;
+
+    @include modifier('phoneNumber') {
+      color: #BF9743;
+
+      &:hover, 
+      &:focus {
         color: #BF9743;
       }
     }
   }
 
-  .form {
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-
-    .innerFormWrapper {
-      box-sizing: border-box; 
-      left: 0;
-      margin:0 auto;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 140px;
-      width: 85%;
-
-      .input-field {
-        box-sizing: border-box;
-        display: inline-block;
-        margin: 0 auto;
-        padding: 0 10px 10px;
-        width: 250px;
-
-
-        input {
-          background: 0;
-          border: 0;
-          border-bottom: 1px solid black;
-          display: block;
-          outline: 0;
-          width: 100%;
-
-        }
-
-        label {
-          display: block;
-          font-size: 80%;
-          font-weight: 300;
-          letter-spacing: 1px;
-          text-align: left;
-          text-transform: uppercase;
-          
-        }
-      }
-
-      .textarea {
-        width: 504px;
-
-        textarea {
-          background: 0;
-          border: 0;
-          border-bottom: 1px solid black;
-          display: block; 
-          min-height: 50px;
-          outline: 0;
-          width: 100%;
-        }
-      }
-
-      .form-submit {
-        background: 0;
-        border: 0;
-        color: black;
-        font-size: 150%;
-        font-weight: bolder;
-        text-transform: uppercase;
-        transition: color .3s ease-in-out;
-
-        &:hover {
-          color: #BF9743;
-        }
-      }
-    }
-  }
-}
-
-.overlay {
-  position: fixed; 
-  background-color: rgba(black, .8);
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index: 999;
-  height:100%;
-  transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-
-  .contact-info {
-    display: block;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 400px;
-    width: 100%;
-    left:0; 
-    right: 0;
+  @include element('innerFormWrapper') {
+    box-sizing: border-box;
+    left: 0;
     margin:0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 140px;
+    width: 85%;
+  }
 
-    p {
-      max-width: 300px;
-      margin:0 auto;
-      color: white;
-      width: 100%;
-      font-size: 120%;
-      margin-bottom: 20px;
+  @include element('labelInputWrapper') {
+    box-sizing: border-box;
+    display: inline-block;
+    margin:0 auto;
+    padding: 0 10px 10px;
+    width: 250px;
 
-      a {
-        color: #BF9743;
-      }
+    @include modifier('textareaWrapper') {
+      width: 504px;
     }
   }
 
+  @include element('inputField') {
+    background:0;
+    border: 0;
+    border-bottom: 1px solid black;
+    display: block;
+    outline: 0;
+    width: 100%;
 
-  .cross {
-    color: rgba(white, .6);
-    font-size: 50px;
-    position: absolute;
-    top:50px;
-    right:50px;
-    transition: color .4s ease-in-out;
+    @include modifier('textarea') {
+      min-height: 50px;
+    }
+
+  }
+
+  @include element('label') {
+    display: block;
+    font-size: 80%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  @include element('submitButton') {
+    background: 0;
+    border: 0;
+    color: black;
+    font-size: 150%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transition: color .3s ease-in-out;
 
     &:hover, 
     &:focus {
-      color: rgba(white, 1);
-      cursor: pointer;
+      color: #BF9743;
     }
-
-  }
-
-  &.visible {
-    visibility: visible;
-    opacity: 1;
   }
 }
+
 

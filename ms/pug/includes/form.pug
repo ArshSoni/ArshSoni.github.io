@@ -1,0 +1,32 @@
+div.contact.js-contactForm#contactForm
+  form.contact__form(name='contactForm', action='index.html', method='post')
+    div.contact__formHeader
+      img.contact__headerImage.contact__headerImage--magicCircle(src="images/magic_circle.png")
+      img.contact__headerImage.contact__headerImage--equity(src="images/equity-black.png")
+      div.contact__info
+        p.contact__text #[strong CALL NOW]
+        | #[a.contact__text--phoneNumber(href="tel:0778712666") +44 (0) 778712 666]
+    
+    div.contact__innerFormWrapper
+      div.contact__labelInputWrapper
+        label.contact__label(for="name") Name
+        input(type="text", name="name", id="name", class="contact__inputField")
+      div.contact__labelInputWrapper
+        label.contact__label(for="email") Email
+        input(type="text" name="name" id="name" class="contact__inputField" required value="" pattern=".*")
+      div.contact__labelInputWrapper
+        label.contact__label(for="occasion") Occasion
+        input(type="text" name="occasion" id="occasion" class="contact__inputField" required value="" pattern=".*")
+      div.contact__labelInputWrapper
+        label.contact__label(for="telephone") Telephone
+        input(type="text" name="telephone" id="telephone" class="contact__inputField" required value="" maxlength="11" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$")
+      div.contact__labelInputWrapper.contact__labelInputWrapper--textareaWrapper
+        label.contact__label(for="message") Your Message
+        textarea(name="message" id="message" class="contact__inputField contact__inputField--textarea" required value="" pattern=".*")
+
+      div.contact__submitWrapper
+        button(type="submit" name="submit" class="contact__submitButton js-form-submit") Submit
+      
+      +getSpinnerAnimation()
+
+      p.contact__submitMessage

@@ -5,43 +5,25 @@ html.loading
 	head
 		+meta('Magic Singh', 'woo')
 		+getStylesheets()
-		
+		script.
+			setTimeout(function() {
+				document.getElementsByTagName('html')[0].classList.remove('loading');
+			}, 500)		
 
 	body
-		//- +getAnimation()
-		div.wrap.fullsize-bg-image.b-lazy(data-src="images/mainCopy.jpg")
+		+getSpinnerAnimation()
+		div.wrap.home.home--fullsizeImage
 			header.header
 				+getNavbar('Home')
 
-			div.details
-				div.container
-						
-					div.bookNowWrappermain
-						a(href="#contactForm" class="bookNowmain")
-							img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
-							
-					//- div.row
-					//- 	div.col-xs-8.col-xs-push-2.col-md-6.col-md-push-3
-					//- 		div.row
-					//- 			div.bookNowWrapper.col-xs-12.col-sm-6.col-sm-push-3
-					//- 				a(href="#contactForm" class="bookNow")
-					//- 					img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Booknowbutton.png")
-								//- div.contactWrapper.col-xs-12.col-sm-6
-								//- 	a(href="tel:+447787122666" class="contact")
-								//- 		img(src="http://magicsingh.com/v1/wp-content/themes/abracadabra/images/Magic_ContactByPhone.png")
-		
 			div.push
 
 		footer
-			+getFooter
+			include includes/footer
 
-		+getContactForm()
-		div.overlay
-			span.cross x
-			div.contact-info
-				p Phone: #[a(href="tel:0778712666") +44778712666]
-				p Email: #[a(href="mailto:contact@magicsingh.com") contact@magicsingh.com]
-
+		include includes/form
+		include includes/contactOverlay
+	
 		+addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
 		+addScript('plugins/magnific/jquery.magnific-popup.js')
 		+addScript('scripts/lazy.js')

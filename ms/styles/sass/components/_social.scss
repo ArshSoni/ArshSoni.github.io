@@ -1,82 +1,100 @@
-.socialWrapper {
+@include block('socialList') {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 500px;
   opacity: 1;
   padding: 0;
   position: relative;
   text-align: center;
 
-  li {
+  @include element('item') {
     display: inline-block;
-    padding: 0 5px;
     vertical-align: middle;
-  }
+    padding: 0 5px;
+    list-style-type: none;
+    border-radius: 50%;
+    margin: 0 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+    line-height: 1.7;
+    background:rgba(189, 150, 67, .8);
+    transition: background .3s ease-in-out;
+    cursor: pointer;
 
-  .bookNowWrapper {
-    img {
-      width: 120px;
+    @include modifier('bookNow') {
+      height: auto;
+      width:auto;
+      background:0;
+      
+    }
+
+    @include modifier('insta') {
+      &:hover, 
+      &:focus {
+        background: #f09433; 
+        background-image: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        background-image: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        background-image: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      }
+    }
+
+
+    @include modifier('twitter') {
+      &:hover, 
+      &:focus {
+        background: #1CB7EB;
+      }
+    }
+
+    @include modifier('facebook') {
+      &:hover, 
+      &:focus {
+        background: #4E71A8;
+      }
+    }
+
+    @include modifier('youtube') {
+      &:hover,
+      &:focus {
+        background: #CA3737;
+      }
     }
   }
 
+  @include element('bookNowImage') {
+    width:120px;
+  }
 
-  svg {
-    circle {
-      fill: rgba(189, 150, 67, .8);
-      transition: fill .3s ease-in-out;
+  @include element('link') {
+    color: white;
+    &:hover,
+    &:focus {
+      color: inherit;
     }
   }
+}
 
-  .social-icon {
-    margin: 0 auto;
-    width: 40px;
-  }
-
-  .social-icon-twitter:hover svg circle,
-  .social-icon-twitter:focus svg circle {
-    fill: #1CB7EB;
-  }
-
-  .social-icon-insta:hover svg circle, 
-  .scoial-icon-twitter:focus svg circle {
-    fill: #444444;
-  }
-
-  .social-icon-fb:hover svg circle, 
-  .social-icon-fb:focus svg circle {
-    fill: #4E71A8;
-  }
-
-  .social-icon-yt:hover svg circle, 
-  .social-icon-yt:focus svg circle {
-    fill: #CA3737;
+@media screen and (max-width: 768px) {
+  @include block('socialList') {
+    @include element('bookNowImage') {
+      width:130px;
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .socialWrapper {
+  @include block('socialList') {
     max-width: auto;
     width: 100%;
-  }
 
-  .bookNowWrapper {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    @include element('item') {
+      @include modifier('bookNow') {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
   }
 }
 
-// @media screen and (max-width: 500px) {
-  
-
-//   .socialWrapper {
-//     .bookNow-initial {
-//       display: none;
-//     }
-
-//     .bookNow-mailTo {
-//       display: inline-block;
-//     }
-//   }
-  
-// }

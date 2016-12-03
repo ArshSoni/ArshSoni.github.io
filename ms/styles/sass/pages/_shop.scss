@@ -10,19 +10,6 @@
   position: relative;
   width: 100%;
 
-  /*&:before {
-    background-color: transparent;
-    background-color: rgba(0, 0, 0, .25);
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-  }*/
-
   .shop-header-text {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -57,7 +44,7 @@
       }
 
       .logo-name {
-        margin: 2em 0 3em;
+        margin: 0 0 2em;
       }
 
       /* form */
@@ -129,7 +116,7 @@
       }
 
       .help { 
-        margin-bottom: 1em;
+        margin-bottom: 2em;
 
         p {
           color: white;
@@ -182,35 +169,49 @@
   display: block;
   background-color: #BD9643;
   margin: 0;
-  padding: 1em 0;
 
   .text-callouts {
     -webkit-font-smoothing: antialiased;
     clear: both; 
     color: white;
-    font-size: 1em;
+    font-size: .9em;
     letter-spacing: .05em;
     line-height: 1.5;
-    margin: 0 auto 2em;
-    max-width: 75em;
+    max-width:765px;
+    width: 100%;
     text-transform: uppercase;
+    padding: 30px;
+    text-align: center;
+    margin:0 auto;
 
     p {
       display: block;
-      margin: 2em auto 2em;
-      max-width: 43.75em;
       text-align: center;
-      width: 80%;
     }
   }
 
+
   .mscard-sample {
     width: 100%;
+    
     img {
       border-bottom: 2px solid #BF9743;
       margin: 0;
       max-width: 100%;
       width: 100%;
+      opacity: 0;
+      transition: opacity .3s ease-in;
+    }
+    
+    .mscard-imgWrapper {
+
+      position: relative !important;
+    }
+  }
+
+  .shop-signoff {
+    p {
+      font-weight:500;
     }
   }
 }
@@ -302,6 +303,8 @@
         margin-top: 0;
 
         .card-overlay {
+          padding-top:30px;
+
           img {
             max-width: 250px;
             width: 100%;
@@ -317,113 +320,3 @@
     }
   }
 }
-
-.b-lazy .animate{
-  opacity:0;
-  -ms-transform: scale(3);
-  -moz-transform: scale(3);
-  -webkit-transform: scale(3);
-  transform: scale(3);
-  -ms-transition: all .4s;
-  -moz-transition: all .4s;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-  
-}
-.b-loaded .animate {
-  opacity:1;
-  -ms-transform: scale(1);
-  -moz-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-    
-
-
-/*
-.wrap {
-  height: 100%;
-}
-
-.shop {
-  min-height: 100%;
-  height: 100%;
-
-  .shop-header {
-    background-image: url('http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-
-    .video-wrapper {
-
-      .msPlayingCardVideo {
-        display: block;
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left:0;
-      }
-    }
-
-    .header-content {
-      margin: 10em auto 0;
-      color: white;
-
-      .logo-name {
-        text-align: center;
-      }
-    }
-  }
-
-  .shop-section-wrapper {
-    background-color: #BD9744;
-
-    .text-callouts {
-      color: white;
-      font-size: 1em;
-      letter-spacing: .05em;
-      line-height: 1.5;
-      text-transform: uppercase;
-      padding: 2em 1em;
-      max-width:720px;
-      width:100;
-      margin: 0 auto;
-      text-align:center;
-      font-weight:300;
-    }
-
-    .msPlayingCard-sampleImages {
-      width: 100%;
-
-      img {
-        width: 100%;
-        border-bottom: 2px solid #BD9744;
-      }
-    }
-  }
-
-  /*.shop-header {
-    background-image: url('http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    overflow: hidden;
-
-
-  .msPlayingCardVideo { 
-    display: block;
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-  }
-}*/
