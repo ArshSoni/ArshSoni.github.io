@@ -244,6 +244,13 @@
       &:hover {
         color: #BD9744;
       }
+
+      &.active {
+
+        &:after {
+          width: 20%;
+        }
+      }
     }
   }
 
