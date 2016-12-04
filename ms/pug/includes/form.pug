@@ -10,16 +10,16 @@ div.contact.js-contactForm#contactForm
     div.contact__innerFormWrapper
       div.contact__labelInputWrapper
         label.contact__label(for="name") Name
-        input(type="text", name="name", id="name", class="contact__inputField")
+        input(type="text", name="name", id="name", class="contact__inputField" required value="" pattern=".*")
       div.contact__labelInputWrapper
         label.contact__label(for="email") Email
-        input(type="text" name="name" id="name" class="contact__inputField" required value="" pattern=".*")
+        input(type="email" name="email" id="email" class="contact__inputField" required value="" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")
       div.contact__labelInputWrapper
         label.contact__label(for="occasion") Occasion
         input(type="text" name="occasion" id="occasion" class="contact__inputField" required value="" pattern=".*")
       div.contact__labelInputWrapper
         label.contact__label(for="telephone") Telephone
-        input(type="text" name="telephone" id="telephone" class="contact__inputField" required value="" maxlength="11" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$")
+        input(type="tel" name="telephone" id="telephone" class="contact__inputField" required value="" pattern="^[0-9]*$")
       div.contact__labelInputWrapper.contact__labelInputWrapper--textareaWrapper
         label.contact__label(for="message") Your Message
         textarea(name="message" id="message" class="contact__inputField contact__inputField--textarea" required value="" pattern=".*")

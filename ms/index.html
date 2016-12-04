@@ -74,11 +74,11 @@
         <div class="contact__innerFormWrapper">
           <div class="contact__labelInputWrapper">
             <label class="contact__label" for="name">Name</label>
-            <input class="contact__inputField" type="text" name="name" id="name">
+            <input class="contact__inputField" type="text" name="name" id="name" required value="" pattern=".*">
           </div>
           <div class="contact__labelInputWrapper">
             <label class="contact__label" for="email">Email</label>
-            <input class="contact__inputField" type="text" name="name" id="name" required value="" pattern=".*">
+            <input class="contact__inputField" type="email" name="email" id="email" required value="" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$">
           </div>
           <div class="contact__labelInputWrapper">
             <label class="contact__label" for="occasion">Occasion</label>
@@ -86,7 +86,7 @@
           </div>
           <div class="contact__labelInputWrapper">
             <label class="contact__label" for="telephone">Telephone</label>
-            <input class="contact__inputField" type="text" name="telephone" id="telephone" required value="" maxlength="11" pattern="^s*(?(020[7,8]{1})?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3})?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})s*$">
+            <input class="contact__inputField" type="tel" name="telephone" id="telephone" required value="" pattern="^[0-9]*$">
           </div>
           <div class="contact__labelInputWrapper contact__labelInputWrapper--textareaWrapper">
             <label class="contact__label" for="message">Your Message</label>

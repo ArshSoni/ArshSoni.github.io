@@ -50,8 +50,10 @@ body {
   margin: 0;
   min-height: inherit;
   padding: 0;
-  position: relative;
-  z-index: 99; }
+  position: static;
+  z-index: 99;
+  top: -70px;
+  transition: top .4s ease-in-out; }
 .navbar--fixed {
   background-color: black;
   border-radius: 0;
@@ -61,7 +63,9 @@ body {
   position: fixed;
   right: 0;
   transition: position .4s ease-in-out;
-  z-index: 999; }
+  z-index: 999;
+  transition: top .4s ease-in-out;
+  top: 0; }
   .navbar--fixed .siteNav {
     padding: 0; }
 .navbar__toggle {
@@ -193,6 +197,10 @@ body {
     padding: 15px 0; }
     .siteNav__link:focus, .siteNav__link:hover {
       color: #BD9744; }
+    .siteNav__link:hover:after {
+      width: 20%; }
+    .siteNav__link.active:after {
+      width: 20%; }
 
   .spade {
     display: block; } }
@@ -287,7 +295,7 @@ body {
       text-align: center; } }
 .overlay {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   top: 0;
   bottom: 0;
   left: 0;
@@ -445,7 +453,8 @@ body {
     padding: 0 10px 10px;
     width: 250px; }
     .contact__labelInputWrapper--textareaWrapper {
-      width: 504px; }
+      width: 504px;
+      padding-bottom: 2px; }
   .contact__inputField {
     background: 0;
     border: 0;
@@ -454,7 +463,7 @@ body {
     outline: 0;
     width: 100%; }
     .contact__inputField--textarea {
-      min-height: 50px; }
+      min-height: 60px; }
   .contact__label {
     display: block;
     font-size: 80%;
@@ -471,7 +480,9 @@ body {
     text-transform: uppercase;
     transition: color .3s ease-in-out; }
     .contact__submitButton:hover, .contact__submitButton:focus {
-      color: #BF9743; }
+      color: #BF9743;
+      outline: 0;
+      border: 0; }
 
 .shop-header {
   background-image: url("http://magicsingh.com/v1/wp-content/themes/abracadabra/images/MS_Card_BG_1000w.jpg");

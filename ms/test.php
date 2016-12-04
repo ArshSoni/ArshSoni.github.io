@@ -45,11 +45,13 @@
       }
     }
 
+
+    $errorsArray = array();
+
     if ($allFieldsFull) {
 
       if (!preg_match($generalRegex, $name)
-        || !preg_match($generalRegex, $occasion)
-        || !preg_match($generalRegex, $message)) {
+        || !preg_match($generalRegex, $occasion)) {
           
         if (!strpos($errors, 'Please enter characters only.')) {
           $errors .= 'Please enter characters only.';
@@ -74,7 +76,11 @@
 
     if (!empty($errors)) {
       echo $errors;
-    } 
+    } else if (empty($errors)) {
+      echo 'success';
+    } else {
+      echo 'fail';
+    }
 
     // echo ($allFieldsFull == true) ? 'success' : 'fail';
 
