@@ -1,0 +1,25 @@
+.no-padding {
+  padding: 0;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+@include block('text') {
+  @include modifier('thin') {
+    font-weight: 500
+  }
+  @include modifier('uppercase') {
+    text-transform: uppercase;
+  }
+}
+
+@include block('no-margin') {
+  margin:0;
+}
+

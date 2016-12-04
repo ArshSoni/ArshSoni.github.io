@@ -40,78 +40,69 @@
         </nav>
       </header>
       <div class="shop">
-        <div class="shop-header">
-          <video class="msPlayingCardVideo" autoplay loop muted>
+        <div class="shop__header">
+          <video class="shop__video" autoplay loop muted>
             <source src="images/msplayingcards/ShopVideoMP4.mp4" type="video/mp4">
           </video>
-          <div class="shop-header-text">
-            <div class="title-action">
-              <div class="card-overlay"><img src="images/msplayingcards/MSCard_overlay.png"></div>
-              <div class="logo-name"><a href="index.html"><img class="shop-card-logo" src="images/msplayingcards/MSLogo_brown.png" alt="Magic Singh" title="MagicSingh"></a>
-                <h3 class="product-title">Playing Cards</h3>
+          <div class="shop__headerContent">
+            <div class="shop__titleAction">
+              <div class="cardOverlay"><img class="cardOverlay__image" src="images/msplayingcards/MSCard_overlay.png"></div>
+              <div class="logoName"><a href="index.html"><img class="shop-card-logo" src="images/msplayingcards/MSLogo_brown.png" alt="Magic Singh" title="MagicSingh"></a>
+                <h3 class="logoName__title">Playing Cards</h3>
               </div>
-              <form class="buy-form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+              <form class="purchaseForm" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="REX7497EJ48UE">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td class="quantity">
-                        <input type="hidden" name="on0" value="Quantity and Shipping">Quantity and Shipping
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <select id="quantity" name="os0">
-                          <option value="1 Deck">1 Deck (U.K. Only) £12.00 GBP </option>
-                          <option value="2 Decks">2 Decks (U.K. Only) £24.00 GBP</option>
-                          <option value="4 Decks">4 Decks (U.K. Only) £47.00 GBP</option>
-                          <option value="8 Decks">8 Decks (U.K. Only) £96.00 GBP</option>
-                          <option value="12 Decks">12 Decks (U.K. Only) £145.00 GBP</option>
-                          <option value="1 Deck International">1 Deck (International) £21.00 GBP</option>
-                          <option value="2 Decks International">2 Decks (International) £34.00 GBP</option>
-                          <option value="4 Decks International">4 Decks (International) £60.00 GBP</option>
-                          <option value="8 Decks International">8 Decks (International) £114.00 GBP</option>
-                          <option value="12 Decks International">12 Decks (International) £164.00 GBP</option>
-                        </select>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p>Addresses outside U.K. must select <br> from International options.</p>
-                <p style="text-decoration:underline">Postage will be added upon checking out</p>
+                <input type="hidden" name="on0" value="Quantity and Shipping">
                 <input type="hidden" name="currency_code" value="GBP">
-                <input id="purchase" type="submit" value="purchase" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                <div class="purchaseForm__selectWrapper">
+                  <p class="purchaseForm__text text--uppercase no-margin">Quantity and Shipping</p>
+                  <select class="purchaseForm__quantitySelect" name="os0">
+                    <option value="1 Deck">1 Deck (U.K. Only) £12.00 GBP </option>
+                    <option value="2 Decks">2 Decks (U.K. Only) £24.00 GBP</option>
+                    <option value="4 Decks">4 Decks (U.K. Only) £47.00 GBP</option>
+                    <option value="8 Decks">8 Decks (U.K. Only) £96.00 GBP</option>
+                    <option value="12 Decks">12 Decks (U.K. Only) £145.00 GBP</option>
+                    <option value="1 Deck International">1 Deck (International) £21.00 GBP</option>
+                    <option value="2 Decks International">2 Decks (International) £34.00 GBP</option>
+                    <option value="4 Decks International">4 Decks (International) £60.00 GBP</option>
+                    <option value="8 Decks International">8 Decks (International) £114.00 GBP</option>
+                    <option value="12 Decks International">12 Decks (International) £164.00 GBP</option>
+                  </select>
+                </div>
+                <p class="purchaseForm__text">Addresses outside U.K. must select <br> from International options.</p>
+                <p class="purchaseForm__text underline">Postage will be added upon checking out</p>
+                <input class="purchaseForm__purchaseButton" type="submit" value="purchase" name="submit" alt="PayPal – The safer, easier way to pay online.">
               </form>
               <div class="help">
-                <h3 class="bottom-arrow">↓</h3>
-                <p>If you have any questions, please get in touch at <a href="mailto:order@magicsingh.com">order@magicsingh.com</a></p>
+                <h3 class="help__arrow">↓</h3>
+                <p class="help__text">If you have any questions, please get in touch at <a class="help__emailLink" href="mailto:order@magicsingh.com">order@magicsingh.com</a></p>
               </div>
             </div>
           </div>
-          <div class="arrowBounceWrapper"><a class="arrow arrow-bounce js-arrow-bounce" href="#shop-content-start"></a></div>
+          <div class="arrowBounce"><a class="arrowBounce__arrow js-arrow-bounce" href="#shop-content-start"></a></div>
         </div>
-        <section class="shop-content" id="shop-content-start">
-          <section class="text-callouts">
-            <p><strong>Magic Singh's Custom branded playing Cards</strong></p>The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
+        <section class="cards__sampleWrapper" id="shop-content-start">
+          <div class="textCallouts">
+            <p class="textCallouts__text"><strong>Magic Singh's Custom branded playing Cards</strong></p>The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
+          </div>
+          <section class="cards__sampleSection">
+            <div class="mscard-imgWrapper"><img class="cards__image shop-card-image" alt="0000 MSCARDS01" data-src="images/msplayingcards/MSCard_001.jpg" src="images/msplayingcards/MSCard_001.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0001 MSCARDS02" data-src="images/msplayingcards/MSCard_002.jpg" src="images/msplayingcards/MSCard_002.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0002 MSCARDS03" data-src="images/msplayingcards/MSCard_003.jpg" src="images/msplayingcards/MSCard_003.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0003 MSCARDS04" data-src="images/msplayingcards/MSCard_004.jpg" src="images/msplayingcards/MSCard_004.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0004 MSCARDS05" data-src="images/msplayingcards/MSCard_005.jpg" src="images/msplayingcards/MSCard_005.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0005 MSCARDS06" data-src="images/msplayingcards/MSCard_006.jpg" src="images/msplayingcards/MSCard_006.jpg"></div>
+            <div class="cards__imgWrapper"><img class="cards__image shop-card-image" alt="0007 MSCARDS07" data-src="images/msplayingcards/MSCard_007.jpg" src="images/msplayingcards/MSCard_007.jpg"></div>
           </section>
-          <section class="mscard-sample">
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0000 MSCARDS01" data-src="images/msplayingcards/MSCard_001.jpg" src="images/msplayingcards/MSCard_001.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0001 MSCARDS02" data-src="images/msplayingcards/MSCard_002.jpg" src="images/msplayingcards/MSCard_002.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0002 MSCARDS03" data-src="images/msplayingcards/MSCard_003.jpg" src="images/msplayingcards/MSCard_003.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0003 MSCARDS04" data-src="images/msplayingcards/MSCard_004.jpg" src="images/msplayingcards/MSCard_004.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0004 MSCARDS05" data-src="images/msplayingcards/MSCard_005.jpg" src="images/msplayingcards/MSCard_005.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0005 MSCARDS06" data-src="images/msplayingcards/MSCard_006.jpg" src="images/msplayingcards/MSCard_006.jpg"></div>
-            <div class="mscard-imgWrapper"><img class="shop-card-image" alt="0007 MSCARDS07" data-src="images/msplayingcards/MSCard_007.jpg" src="images/msplayingcards/MSCard_007.jpg"></div>
-          </section>
-          <section class="text-callouts shop-signoff">
-            <p>Only available through MagicSingh.com</p>
-          </section>
+          <div class="textCallouts">
+            <p class="textCallouts__text text--thin">Only available through MagicSingh.com</p>
+          </div>
         </section>
       </div>
       <div class="push"></div>
     </div>
-    <footer class="shop-footer">
+    <footer class="shop__footer">
       <div class="container no-padding">
         <ul class="socialList">
           <li class="socialList__item socialList__item--twitter"><a class="socialList__link" href="https://www.twitter.com/magicsingh"><i class="fa-icon fa fa-twitter"></i></a></li>

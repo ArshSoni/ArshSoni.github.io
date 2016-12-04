@@ -14,10 +14,8 @@
     margin: 0;
     min-height: inherit;
     padding: 0;
-    position: static;
+    position: relative;
     z-index: 99;
-    top:-70px;
-    transition: top .4s ease-in-out;
   }
 
   @include modifier('fixed') {
@@ -30,7 +28,6 @@
     right: 0;
     transition: position .4s ease-in-out;
     z-index: 999;
-    transition: top .4s ease-in-out;
     top:0;
 
     .siteNav {

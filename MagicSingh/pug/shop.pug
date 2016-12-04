@@ -12,85 +12,84 @@ html
 				+getNavbar('Shop')
 
 			div.shop
-				div.shop-header
+				div.shop__header
 
-					video(class="msPlayingCardVideo" autoplay loop muted)
+					video(class="shop__video" autoplay loop muted)
 						source(src="images/msplayingcards/ShopVideoMP4.mp4" type="video/mp4")
 					
-					div.shop-header-text
-						div.title-action
-							div.card-overlay
-								img(src="images/msplayingcards/MSCard_overlay.png")
+					div.shop__headerContent
+						div.shop__titleAction
+							div.cardOverlay
+								img.cardOverlay__image(src="images/msplayingcards/MSCard_overlay.png")
 						
-							div.logo-name
+							div.logoName
 								a(href="index.html")
 									img(src="images/msplayingcards/MSLogo_brown.png" alt="Magic Singh" class="shop-card-logo" title="MagicSingh")
-								h3.product-title Playing Cards
+								h3.logoName__title Playing Cards
 
-							form.buy-form(target='paypal', action='https://www.paypal.com/cgi-bin/webscr', method='post')
+							form.purchaseForm(target='paypal', action='https://www.paypal.com/cgi-bin/webscr', method='post')
 								input(type='hidden', name='cmd', value='_s-xclick')
 								input(type='hidden', name='hosted_button_id', value='REX7497EJ48UE')
-								table
-									tbody
-										tr
-											td.quantity
-												input(type='hidden', name='on0', value='Quantity and Shipping')
-												| Quantity and Shipping
-										tr
-											td
-												select#quantity(name='os0')
-													option(value='1 Deck') 1 Deck (U.K. Only) £12.00 GBP 
-													option(value='2 Decks') 2 Decks (U.K. Only) £24.00 GBP
-													option(value='4 Decks') 4 Decks (U.K. Only) £47.00 GBP
-													option(value='8 Decks') 8 Decks (U.K. Only) £96.00 GBP
-													option(value='12 Decks') 12 Decks (U.K. Only) £145.00 GBP
-													option(value='1 Deck International') 1 Deck (International) £21.00 GBP
-													option(value='2 Decks International') 2 Decks (International) £34.00 GBP
-													option(value='4 Decks International') 4 Decks (International) £60.00 GBP
-													option(value='8 Decks International') 8 Decks (International) £114.00 GBP
-													option(value='12 Decks International') 12 Decks (International) £164.00 GBP
-								p
+								input(type='hidden', name='on0', value='Quantity and Shipping')
+								input(type='hidden', name='currency_code', value='GBP')
+								
+								div.purchaseForm__selectWrapper
+									p.purchaseForm__text.text--uppercase.no-margin Quantity and Shipping
+								
+									select.purchaseForm__quantitySelect(name='os0')
+										option(value='1 Deck') 1 Deck (U.K. Only) £12.00 GBP 
+										option(value='2 Decks') 2 Decks (U.K. Only) £24.00 GBP
+										option(value='4 Decks') 4 Decks (U.K. Only) £47.00 GBP
+										option(value='8 Decks') 8 Decks (U.K. Only) £96.00 GBP
+										option(value='12 Decks') 12 Decks (U.K. Only) £145.00 GBP
+										option(value='1 Deck International') 1 Deck (International) £21.00 GBP
+										option(value='2 Decks International') 2 Decks (International) £34.00 GBP
+										option(value='4 Decks International') 4 Decks (International) £60.00 GBP
+										option(value='8 Decks International') 8 Decks (International) £114.00 GBP
+										option(value='12 Decks International') 12 Decks (International) £164.00 GBP
+								
+								p.purchaseForm__text
 									| Addresses outside U.K. must select 
 									br
 									|  from International options.
-								p(style='text-decoration:underline;') Postage will be added upon checking out
-								input(type='hidden', name='currency_code', value='GBP')
-								input#purchase(type='submit', value='purchase', name='submit', alt='PayPal – The safer, easier way to pay online.')
+								p.purchaseForm__text.underline Postage will be added upon checking out
+								input.purchaseForm__purchaseButton(type='submit', value='purchase', name='submit', alt='PayPal – The safer, easier way to pay online.')
 							
 							div.help
-								h3.bottom-arrow ↓
-								p If you have any questions, please get in touch at #[a(href="mailto:order@magicsingh.com") order@magicsingh.com]
-					div.arrowBounceWrapper
-						a(href="#shop-content-start").arrow.arrow-bounce.js-arrow-bounce
+								h3.help__arrow ↓
+								p.help__text If you have any questions, please get in touch at #[a.help__emailLink(href="mailto:order@magicsingh.com") order@magicsingh.com]
+
+					div.arrowBounce
+						a(href="#shop-content-start").arrowBounce__arrow.js-arrow-bounce
 						
 
-				section.shop-content#shop-content-start
-					section.text-callouts
-						p
+				section.cards__sampleWrapper#shop-content-start
+					div.textCallouts
+						p.textCallouts__text
 							strong Magic Singh's Custom branded playing Cards
 						| The first of their kind, the world renowed U.S. Playing Card company has manufactured these beautiful, intricately designed playing cards, highlighting regal Indian hertiage and identity.
 					
-					section.mscard-sample
+					section.cards__sampleSection
 						div.mscard-imgWrapper
-							img(alt='0000 MSCARDS01', class='shop-card-image' data-src="images/msplayingcards/MSCard_001.jpg" src="images/msplayingcards/MSCard_001.jpg")
-						div.mscard-imgWrapper
-							img(alt='0001 MSCARDS02', class='shop-card-image' data-src="images/msplayingcards/MSCard_002.jpg" src="images/msplayingcards/MSCard_002.jpg")
-						div.mscard-imgWrapper
-							img(alt='0002 MSCARDS03', class='shop-card-image' data-src="images/msplayingcards/MSCard_003.jpg" src="images/msplayingcards/MSCard_003.jpg")
-						div.mscard-imgWrapper
-							img(alt='0003 MSCARDS04', class='shop-card-image' data-src="images/msplayingcards/MSCard_004.jpg" src="images/msplayingcards/MSCard_004.jpg")
-						div.mscard-imgWrapper
-							img(alt='0004 MSCARDS05', class='shop-card-image' data-src="images/msplayingcards/MSCard_005.jpg" src="images/msplayingcards/MSCard_005.jpg")
-						div.mscard-imgWrapper
-							img(alt='0005 MSCARDS06', class='shop-card-image' data-src="images/msplayingcards/MSCard_006.jpg" src="images/msplayingcards/MSCard_006.jpg")
-						div.mscard-imgWrapper
-							img(alt='0007 MSCARDS07', class='shop-card-image' data-src="images/msplayingcards/MSCard_007.jpg" src="images/msplayingcards/MSCard_007.jpg")
+							img.cards__image(alt='0000 MSCARDS01', class='shop-card-image' data-src="images/msplayingcards/MSCard_001.jpg" src="images/msplayingcards/MSCard_001.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0001 MSCARDS02', class='shop-card-image' data-src="images/msplayingcards/MSCard_002.jpg" src="images/msplayingcards/MSCard_002.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0002 MSCARDS03', class='shop-card-image' data-src="images/msplayingcards/MSCard_003.jpg" src="images/msplayingcards/MSCard_003.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0003 MSCARDS04', class='shop-card-image' data-src="images/msplayingcards/MSCard_004.jpg" src="images/msplayingcards/MSCard_004.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0004 MSCARDS05', class='shop-card-image' data-src="images/msplayingcards/MSCard_005.jpg" src="images/msplayingcards/MSCard_005.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0005 MSCARDS06', class='shop-card-image' data-src="images/msplayingcards/MSCard_006.jpg" src="images/msplayingcards/MSCard_006.jpg")
+						div.cards__imgWrapper
+							img.cards__image(alt='0007 MSCARDS07', class='shop-card-image' data-src="images/msplayingcards/MSCard_007.jpg" src="images/msplayingcards/MSCard_007.jpg")
 
-					section.text-callouts.shop-signoff
-						p Only available through MagicSingh.com
+					div.textCallouts
+						p.textCallouts__text.text--thin Only available through MagicSingh.com
 					
 			div.push
-		footer.shop-footer
+		footer.shop__footer
 			include includes/footer
 
 		include includes/form
