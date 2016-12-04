@@ -97,6 +97,9 @@
     display: block;
     outline: 0;
     width: 100%;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius:0;
 
     @include modifier('textarea') {
       min-height: 60px;
