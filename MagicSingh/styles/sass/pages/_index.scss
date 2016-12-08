@@ -1,0 +1,18 @@
+@include block('home') {
+
+  @include modifier('fullsizeImage') {
+    background-image: url('../images/originalLarge.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  @include block('home') {
+    @include modifier('fullsizeImage') {
+      background-image: url('../images/originalSmall.jpg');
+    }
+  }
+}
