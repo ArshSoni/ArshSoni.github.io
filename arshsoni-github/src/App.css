@@ -1,0 +1,112 @@
+.App {
+  padding: 50px 0 20px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+nav {
+  margin-bottom: 10px !important;
+
+}
+
+.profile-col {
+  padding-left: 0;
+  max-width: 230px;
+}
+
+.content-col {
+  padding-right: 0;
+}
+
+.nav-col {
+  max-width: 40px;
+  text-align: right;
+}
+
+.profile {
+  
+}
+
+.profile--name {
+  font-size: 24px;
+  
+  margin: 0;
+  padding: 10px 0;
+}
+
+.profile--detailsWrapper {
+  background-color: #42A5F5;
+  padding: 20px;
+  color: white;
+}
+
+.profile--imageWrapper {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin:0 auto;
+}
+
+.profile--image {
+  width: 100%;
+}
+
+.profile--cv {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.nav--list {
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+}
+
+.nav--item {
+  text-align: center;
+  position: relative;
+}
+
+.nav--itemTooltip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  border: 1px solid gray;
+  font-size: 12px;
+  padding: 5px 2px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.nav--item:hover .nav--itemTooltip {
+  display: block;
+}
+
+.content--inner {
+  padding: 20px;
+}
