@@ -1,1 +1,0 @@
-var validateForm=function(){function a(){c.novalidate=!0}var b="js-form",c=document.getElementsByClassName(b)[0];return c?{init:a}:void console.log("unable to find form")}();validateForm.init();
